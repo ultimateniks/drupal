@@ -1,0 +1,95 @@
+<?php
+
+function blocked_ip_load($iid) {
+  return db_fetch_array(db_query("SELECT * FROM {blocked_ips} WHERE iid = '%s'", $iid));
+}
+
+/**
+ * Checks to see if an IP address has been blocked.
+ *
+ * Blocked IP addresses are stored in the database by default. However for
+ * performance reasons we allow an override in settings.php. This allows us
+ * to avoid querying the database at this critical stage of the bootstrap if
+ * an administrative interface for IP address blocking is not required.
+ * 
+ * Copied and ported from Drupal 7
+ *
+ * @param $ip
+ *   IP address to check.
+ *
+ * @return bool
+ *   TRUE if access is denied, FALSE if access is allowed.
+ */
+function blocked_ips_is_denied($ip) {
+  // Because this function is called on every page request, we first check
+  // for an array of IP addresses in settings.php before querying the
+  // database.
+  $blocked_ips = variable_get('blocked_ips', NULL);
+  $denied = FALSE;
+  
+  if (isset($blocked_ips) && is_array($blocked_ips)) {
+    $denied = in_array($ip, $blocked_ips);
+  } else {
+    $denied = (bool)db_result(db_query("SELECT 1 FROM {blocked_ips} WHERE ip = '%s'",$ip));
+  }
+  return $denied;
+}
+
+/**
+ * Handles denied users.
+ *
+ * Implementation of hook_init()
+ */
+function blocked_ips_init() {
+  $users_ip = ip_address();
+  
+  if(blocked_ips_is_denied($users_ip)) {
+      header($_SERVER['SERVER_PROTOCOL'] . ' 403 Forbidden');
+      //print 'Sorry, ' . check_plain($users_ip) . ' has been banned.';
+      print 'Site is under maintenance please try later!';
+      exit();
+  }
+}
+
+function blocked_ips_menu() {
+  $items['admin/settings/blocked_ips'] = array(
+    'title' => 'Blocked IP addresses',
+    'description' => 'Block access of site from specific IP addresses',
+    'page callback' => 'block_ips_overview',
+    'access arguments' => array('adminster site configuration'),
+    'file' => 'blocked_ips.admin.inc',
+  );
+  
+  $items['admin/settings/blocked_ips/add'] = array(
+    'title' => 'Add IP for blocking',
+    'page callback' => 'blocked_ips_edit',
+    'access arguments' => array('adminster site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'blocked_ips.admin.inc',    
+  );
+  
+  $items['admin/settings/blocked_ips/edit'] = array(
+    'title' => 'Add IP for blocking',
+    'page callback' => 'blocked_ips_edit',
+    'access arguments' => array('adminster site configuration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'blocked_ips.admin.inc',    
+  );
+  
+  $items['admin/settings/blocked_ips/delete'] = array(
+    'title' => 'Delete blocked IP address',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('blocked_ips_delete_confirm'),
+    'access arguments' => array('adminster site configuration'),
+    'file' => 'blocked_ips.admin.inc',
+  );
+  
+  $items['admin/settings/blocked_ips/list'] = array(
+    'title' => 'List',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+  
+  return $items;
+}

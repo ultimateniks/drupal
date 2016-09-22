@@ -1,0 +1,461 @@
+.maincontent{
+
+border-right:1px solid #fff;
+
+border-bottom: 1 px solid #fff;
+
+float:left;
+
+}
+
+
+
+.rightcontent {
+
+	width: 560px;
+
+	padding-top: 0px;
+
+	padding-left: 10px;
+
+	float: left
+
+}
+
+
+
+.bgcolormain {
+
+	background-color: #e1e1e1;
+
+}
+
+
+
+.kexchange_title1 {
+
+	font-size: 46px;
+
+	font-weight: bold;
+
+	line-height: 60px;
+
+	font-family: "Trebuchet MS", "Lucida Sans", Arial;
+
+}
+
+
+
+.fondbigRed {
+
+	font-size: 28px;
+
+	font-weight: bold;
+
+	color: #ba0505;
+
+	line-height: normal;
+
+	font-family: "Trebuchet MS", "Lucida Sans", Arial;
+
+}
+
+
+
+.maincontent a:link,.maincontent a:visited,.maincontent a:active {
+
+	font-size: 18px;
+
+	color: #000;
+
+	text-decoration: underline
+
+}
+
+
+
+.maincontent a:hover {
+
+	font-size: 18px;
+
+	color: #000;
+
+	text-decoration: none;
+
+}
+
+
+
+.Accordionhead {
+
+	background: #c00000 url(../images/img_acc_right.gif) no-repeat top right
+
+		;
+
+	height: 27px;
+
+	line-height: 24px;
+
+	padding-left: 10px;
+
+	cursor: pointer;
+
+	font-size: 16px;
+
+	font-weight: normal;
+
+	color: #fff;
+
+}
+
+
+
+.Accordianbody {
+
+	padding: 10px;
+
+	background-color: #fff;
+
+	border: 1px solid #d4d4d4;
+
+	border-left: none;
+
+	margin-right: 12px;
+
+	line-height: 16px
+
+}
+
+
+
+.Accshed {
+
+	background: url(../images/img_footershed.gif) repeat-x top right;
+
+	height: 5px;
+
+	margin-right: 12px;
+
+}
+
+
+
+.curvebox_block {
+
+	float: left;
+
+	width: 517px;
+
+	padding: 0px 0px 0px 0px;
+
+}
+
+
+
+.curvebox {
+
+	background: transparent url(../images/weare_hiring_back.png) no-repeat
+
+		left 0px;
+
+	height: 278px;
+
+	text-align: center;
+
+	padding: 10px;
+
+	font: normal 24px "Trebuchet MS", "Lucida Sans", Arial;
+
+	line-height: normal;
+
+}
+
+
+
+.curvebox a:link,.curvebox a:visited,.curvebox a:active {
+
+	color: #c00000;
+
+	text-decoration: none;
+
+}
+
+
+
+.curvebox a:hover {
+
+	color: #c00000;
+
+	text-decoration: underline;
+
+}
+
+
+
+.facebookblok {
+
+	color: #0070c0;
+
+	font-size: 13px;
+
+	background-color: #fff;
+
+	padding: 10px;
+
+	width: 170px;
+
+	text-align: center
+
+}
+
+
+
+.close_acc {
+
+	float: right;
+
+	padding-right: 20px;
+
+	padding-top: 6px;
+
+}
+
+
+
+.acc_lefttxt {
+
+	float: left;
+
+	width: 900px;
+
+}
+
+
+
+.hot_proj_block_big {
+
+	float: left;
+
+	width: 394px;
+
+	padding-right: 13px;
+
+}
+
+
+
+.share_txt {
+
+	line-height: 14px;
+
+	float: left;
+
+	padding-left: 5px;
+
+	padding-top: 5px;
+
+}
+
+
+
+/*gray corner*/
+
+#content-area b.conr {
+
+	display: block;
+
+}
+
+
+
+#content-area b.conr b {
+
+	background: #fff none repeat scroll 0 0;
+
+	border-color: #c9c9c6;
+
+	border-style: solid;
+
+	border-width: 0 1px;
+
+	display: block;
+
+	font-size: 1px;
+
+	height: 1px;
+
+	overflow: hidden;
+
+}
+
+
+
+#content-area b.conr b.b1 {
+
+	background: #c9c9c6 none repeat scroll 0 0;
+
+	margin: 0 4px;
+
+}
+
+
+
+#content-area b.conr b.b2 {
+
+	border-width: 0 2px;
+
+	margin: 0 2px;
+
+}
+
+
+
+#content-area b.conr b.b3 {
+
+	border-width: 0 1px;
+
+	height: 2px;
+
+	margin: 0 1px;
+
+}
+
+
+
+#content-area .left_c {
+
+	padding: 0px 0px 10px 0px;
+
+	background: #fff;
+
+}
+
+
+
+.font_24 {
+
+	font: normal 24px "Trebuchet MS", "Lucida Sans", Arial;
+
+	line-height: normal;
+
+}
+
+
+
+.hproject_title {
+
+	background: #d6d6d6;
+
+	padding: 7px 17px;
+
+	font-weight: bold;
+
+	font-size: 15px;
+
+	border-right: 1px solid #fff;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.hproject_content{padding:7px 17px; border-right:1px solid #e1e1e1; min-height:255px;}
+
+
+
+.webcast_title {
+
+	color: #BA0505;
+
+	display: block;
+
+	font-size: 13px;
+
+	font-weight: bold;
+
+}
+
+
+
+.padl10{padding-left:10px;}
+
+.float_l{float:left;}
+
+.float_r{float:right;}
+
+.padb10{padding-bottom:8px;}
+
+.padt15{padding-top:15px;}
+
+.padl13 {padding-left: 13px;}
+
+.padl15{padding-left:15px;}
+
+.padt30{padding-top:30px;}
+
+.padt20{padding-top:20px;}
+
+
+
+
+.pgrowthnum{display:inline-block;}
+.pgrowthnum ol{margin:5px 0px 0px 10px; padding:0px; list-style-position:inside;}
+
+.pgrowthnum ol li{list-style-type:decimal; line-height:16px; background:none; padding-left:0px; text-align:left;}
+
+.pgrowth_red_top{background:url(../images/plan_red_top.png) left top no-repeat; width:246px; height:33px;}
+
+.pgrowth_red_center{background:url(../images/plan_red_center.png) left top repeat-y; width:236px; min-height:260px; padding-right:10px;}
+
+*html.pgrowth_red_center{background:url(../images/plan_red_center.png) left top repeat-y; width:236px; height:260px; padding-right:10px;}
+
+.pgrowth_red_bottom{background:url(../images/plan_red_boddom.png) left top no-repeat; width:246px; height:9px;}
+
+
+
+.pgrowth_yellow_top{background:url(../images/plan_yellow_top.png) left top no-repeat; width:246px; height:33px;}
+
+.pgrowth_yellow_center{background:url(../images/plan_yellow_center.png) left top repeat-y; width:236px; min-height:260px; padding-right:10px;}
+
+*html.pgrowth_yellow_center{background:url(../images/plan_yellow_center.png) left top repeat-y; width:236px; height:260px; padding-right:10px;}
+
+.pgrowth_yellow_bottom{background:url(../images/plan_yellow_boddom.png) left top no-repeat; width:246px; height:9px;}
+
+
+
+.pgrowth_green_top{background:url(../images/plan_green_top.png) left top no-repeat; width:246px; height:33px;}
+
+.pgrowth_green_center{background:url(../images/plan_green_center.png) left top repeat-y; width:236px; min-height:285px; padding-right:10px;}
+
+*html.pgrowth_green_center{background:url(../images/plan_green_center.png) left top repeat-y; width:236px; height:285px; padding-right:10px;}
+
+.pgrowth_green_bottom{background:url(../images/plan_green_boddom.png) left top no-repeat; width:246px; height:9px;}
+
+.pgrowth_tophead{color:#fff; font-weight:normal; padding:8px 5px 0px 15px; font-size:14px; line-height:normal;}
+
+.pgrowthboxin ul{margin:0px 0px 0px 10px; padding:5px; list-style:none;}
+
+.pgrowthboxin ul li{ background:url(../images/plangrowth_bullet.png) left 5px no-repeat; padding-left:15px; line-height:15px; padding-bottom:4px;}
+
+
+
+.clear { clear:both; line-height:0px; }
+
+.float_l { float:left; }
+
+.float_r { float:right; }
+
+
+
+.pt5 { padding-top:5px; }
+
+.pt10 { padding-top:10px; }
+
+.pt15 { padding-top:15px; }
+
+.pt90 { padding-top:90px; }
+
+.padl5 { padding-left:5px; }
+
+.padl30 { padding-left:30px; }

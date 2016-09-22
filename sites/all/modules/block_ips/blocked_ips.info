@@ -1,0 +1,5 @@
+name = Blocked IPs
+description = Block requests from specific IP address
+core = 6.x
+
+version = "6.x-dev"

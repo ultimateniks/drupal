@@ -1,0 +1,44 @@
+<?php
+
+function blocked_ips_schema() {
+  $schema['blocked_ips'] = array(
+    'description' => 'Stores blocked IP addresses.',
+    'fields' => array(
+      'iid' => array(
+        'description' => 'Primary Key: unique ID for IP addresses.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'ip' => array(
+        'description' => 'IP address',
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'indexes' => array(
+      'blocked_ip' => array('ip'),
+    ),
+    'primary key' => array('iid'),
+  );
+  
+  return $schema;
+}
+
+/**
+ * Implementation of hook_install()
+ */
+function blocked_ips_install() {
+  drupal_install_schema('blocked_ips');
+}
+
+/**
+ * Implementation of hook_uninstall()
+ */
+
+function blocked_ips_uninstall() {
+  drupal_uninstall_schema('blocked_ips');
+  
+}

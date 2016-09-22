@@ -1,0 +1,76 @@
+/******************************
+   Home Splash
+******************************/	
+.home-splash { overflow:hidden; zoom:1; position:relative; height:394px; margin:0 0 24px; /*background:#dfe1eb;*/ background:#fff; }
+.home-splash .tabs  { position:relative; height:394px; }
+.home-splash h1 { line-height:34px; margin:0 0 16px; color:#FFFFFF; font-size:35px; font-weight:bold; }
+.home-splash h2 { margin:0 0 16px; color:#333333; font-size:19px; font-weight:normal; line-height:normal; }
+.home-splash p { width:300px; line-height:18px; margin:0 0 10px; font-size:14px; color:#FFFFFF; }
+
+.home-splash ul { position:absolute; bottom:0; list-style:none; overflow:hidden; zoom:1; margin:0 0 0 50px; z-index:1000; }
+.home-splash ul li { float:left; margin:0 2px 0 0; }
+.home-splash ul li a { display:block; width:186px; height:42px; line-height:44px; padding:0 0 0 9px; background:url('../images/home/bg-splash-tab-leftcap.png') top left no-repeat; color:#000000; font-size:17px; text-align:center; }
+.home-splash ul li a span { display:block; height:42px; line-height:44px; padding:0 28px 0 19px; background:url('../images/home/bg-splash-tab.png') top right no-repeat; cursor:pointer;  }
+.home-splash ul li.tab-button-3 a { width:260px; }
+.home-splash ul li a.on { background:url('../images/home/bg-splash-tab-on-leftcap.png') top left no-repeat;  }
+.home-splash ul li a.on span { background:url('../images/home/bg-splash-tab-on.png') top right no-repeat; }
+
+/*.home-splash .tab { width:924px; height:332px; padding:70px 0 0 40px; }
+.home-splash #problems-we-solve { background:url('../images/home/temp.jpg') top left no-repeat; }
+.home-splash #problems-we-solve div { width:380px; }
+.home-splash #problems-we-solve p { width:300px; }
+.home-splash #what-we-provide { background:url('../images/home/temp2.jpg') top left no-repeat; }
+.home-splash #what-we-provide div { width:380px; }
+.home-splash #what-we-provide p { width:300px; }
+.home-splash #industries-applications { background:url('../images/home/temp3.jpg') top left no-repeat; }
+.home-splash #industries-applications div { width:490px; }
+.home-splash #industries-applications p { width:330px; }
+.home-splash #teneqs-experts { background:url('../images/home/temp4.jpg') top left no-repeat; }
+.home-splash #teneqs-experts div { width:400px; }
+.home-splash #teneqs-experts p { width:370px; }*/
+
+.home-splash .tab { min-width:724px; height:285px; background:url('../images/home/home-banner.jpg') top left no-repeat; padding:110px 120px 0 120px; font-weight: bold; text-align: center; text-shadow:#000000 1px 1px 8px;}
+.home-splash #problems-we-solve div { width:auto; }
+.home-splash #problems-we-solve p { width:auto; padding-top: 10px}
+
+/******************************
+	Tabs
+******************************/	
+.home-bottom { overflow:hidden; zoom:1; } 
+.home-bottom .engagement-updates { float:left; width:478px; height: 0px; }
+.home-bottom .engagement-updates .tabs { font-size:12px; }
+.home-bottom .engagement-updates .tabs ul { list-style:none; overflow:hidden; zoom:1; margin:0; background:url('../images/home/bg-tabs.png') bottom repeat-x; }
+.home-bottom .engagement-updates .tabs ul li { float:left; margin:0 8px 0 0; }
+.home-bottom .engagement-updates .tabs ul li a { width: 472px; display:block; height:8px; padding:0 0 0 6px; background:url('../images/home/bg-tab-leftcap.png') top left no-repeat; font-size:14px; text-decoration:none; color:#666666; }
+.home-bottom .engagement-updates .tabs ul li a span { display:block; height:auto; padding:0 28px 0 22px; background:url('../images/home/bg-tab.png') top right no-repeat; cursor:pointer; }
+.home-bottom .engagement-updates .tabs ul li a:hover { text-decoration:underline; }
+.home-bottom .engagement-updates .tabs ul li.ui-tabs-selected a { background:url('../images/home/bg-tab-on-leftcap.png') top left no-repeat; }
+.home-bottom .engagement-updates .tabs ul li.ui-tabs-selected a span { background:url('../images/home/bg-tab-on-full.png') top right no-repeat; }
+
+.home-bottom .engagement-updates .tabs .tabs-outer { padding:13px 28px; background:url('../images/home/bg-tab-content.png') top left no-repeat; }
+.home-bottom .engagement-updates .tabs p { line-height:18px; margin:0 0 16px; }
+.home-bottom .engagement-updates .tabs h4 { font-size:13px; color:#333333; font-weight:bold; }
+
+/******************************
+	Styled Buckets
+******************************/	
+.home-bottom .styled-buckets { overflow:hidden; zoom:1; float:right; width:470px; }
+.home-bottom .styled-buckets .bucket { position:relative; float:left; width:225px; height:200px; margin:0 10px 0 0; }
+.home-bottom .styled-buckets .bucket div { position:absolute; }
+.home-bottom .styled-buckets .bucket div.inner { position:relative; }
+.home-bottom .styled-buckets .bucket.teneqs-solutions { }
+.home-bottom .styled-buckets .bucket.teneqs-solutions .heading-top { top:0; left:20px; font-size:18px; color:#333333; }
+.home-bottom .styled-buckets .bucket.teneqs-solutions .heading-mid { top:64px; left:70px; font-size:18px; color:#333333; }
+.home-bottom .styled-buckets .bucket.teneqs-solutions .image { top:30px; left:70px; font-size:18px; color:#333333; }
+.home-bottom .styled-buckets .bucket.teneqs-solutions .text { top:90px; left:70px; font-size:12px; }
+.home-bottom .styled-buckets .bucket.teneqs-solutions .button { top:72px; left:45px; }
+.home-bottom .styled-buckets .bucket.teneqs-solutions .button  a{ /*float:left;*/}
+
+.home-bottom .styled-buckets .bucket.teneqs-expert { }
+.home-bottom .styled-buckets .bucket.teneqs-expert .heading-top { top:0; left:20px; font-size:18px; color:#333333; }
+.home-bottom .styled-buckets .bucket.teneqs-expert .heading-mid { top:20px; left:36px; font-size:18px; color:#333333; }
+.home-bottom .styled-buckets .bucket.teneqs-expert .heading-bot { top:62px; left:70px; line-height:18px; font-size:18px; color:#333333; }
+.home-bottom .styled-buckets .bucket.teneqs-expert .image { top:26px; left:80px; font-size:18px; color:#333333; }
+.home-bottom .styled-buckets .bucket.teneqs-expert .text { top:104px; left:70px; font-size:12px; }
+.home-bottom .styled-buckets .bucket.teneqs-expert .button { top:72px; left:15px; }
+.home-bottom .styled-buckets .bucket.teneqs-expert .button a { /*float:left;*/}

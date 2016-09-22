@@ -1,0 +1,6 @@
+;$Id: custom_hooks.info,v 1.0 2011/06/15 11:27:00 Deepak Exp $
+name = Custom hooks
+description = " Custom hooks module for 10EQS"
+core = 6.x
+version = "6.x.0"
+package = Custom

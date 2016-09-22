@@ -1,0 +1,12 @@
+/******************************
+   About
+******************************/
+#heading { background:url('../images/about/header.jpg') top left no-repeat; }
+
+/******************************
+   Team
+******************************/
+.team { }
+.team .team-item { margin:0; }
+.team .team-item h4 { margin:0 0 10px 0; }
+.team .team-item img { float:left; width:90px; height:108px; margin:0 10px 10px 0; border:1px solid #cccccc; }

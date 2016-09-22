@@ -1,0 +1,3692 @@
+/* $Id: zen.css,v 1.14.2.6 2009/11/05 11:03:32 johnalbin Exp $ */
+
+
+
+/*
+
+ * ZEN STYLES
+
+ *
+
+ * This is an example stylesheet. Sub-themes should NOT include the zen/zen.css
+
+ * file, but instead copy this CSS to their own stylesheets.
+
+ *
+
+ * In this stylesheet, we have included all of the classes and IDs from this
+
+ * theme's tpl.php files. We have also included many of the useful Drupal core
+
+ * styles to make it easier for theme developers to see them.
+
+ *
+
+ * Many of these styles are over-riding Drupal's core stylesheets, so if you
+
+ * remove a declaration from here, the styles may still not be what you want
+
+ * since Drupal's core stylesheets are still styling the element. See the
+
+ * drupal6-reference.css file for a list of all Drupal 5.x core styles.
+
+ *
+
+ * In addition to the style declarations in this file, other Drupal styles that
+
+ * you might want to override or augment are those for:
+
+ *
+
+ *   Book Navigation  See line 74  of Zen's drupal6-reference.css file
+
+ *   Forum            See line 197 of Zen's drupal6-reference.css file
+
+ *   Menus            See line 667 of Zen's drupal6-reference.css file
+
+ *   News Aggregator  See line 20  of Zen's drupal6-reference.css file
+
+ *   Polls            See line 287 of Zen's drupal6-reference.css file
+
+ *   Search           See line 320 of Zen's drupal6-reference.css file
+
+ *   User Profiles    See line 945 of Zen's drupal6-reference.css file
+
+ */
+
+
+
+
+
+/** body **/
+
+  
+
+  body
+
+  {
+
+    margin: 0;
+
+    padding: 10px;
+
+    font-family:"Lucida Sans Unicode","Lucida Sans","Lucida Grande",verdana,arial,helvetica;
+
+	font-size:11px;
+
+	font-size-adjust:none;
+
+	font-style:normal;
+
+	font-variant:normal;
+
+	font-weight:normal;
+
+	letter-spacing:normal;
+
+	line-height:normal;
+
+	margin:0;
+
+	padding:0px;
+
+  }
+
+
+
+  #page
+
+  {
+
+  }
+
+
+
+  #page-inner
+
+  {
+
+  }
+
+
+
+/** header **/
+
+  #header
+
+  {
+
+  }
+
+
+
+  #header-inner
+
+  {
+
+  }
+
+
+
+  h1#site-name, div#site-name /* The name of the website */
+
+  {
+
+    margin: 0;
+
+    font-size: 2em;
+
+    line-height: 1.3em;
+
+  }
+
+
+
+  #site-name a:link,
+
+  #site-name a:visited
+
+  {
+
+    color: #000;
+
+    text-decoration: none;
+
+  }
+
+
+
+  #site-name a:hover
+
+  {
+
+    text-decoration: underline;
+
+  }
+
+
+
+  #site-slogan /* The slogan (or tagline) of a website */
+
+  {
+
+  }
+
+
+
+  #header-blocks /* Wrapper for any blocks placed in the header region */
+
+  {
+
+  }
+
+
+
+/** main (container for everything else) **/
+
+  #main
+
+  {
+
+  }
+
+
+
+  #main-inner
+
+  {
+
+  }
+
+
+
+/** content **/
+
+  #content
+
+  {
+
+  }
+
+
+
+  #content-inner
+
+  {
+
+  }
+
+
+
+  #mission /* The mission statement of the site (displayed on homepage) */
+
+  {
+
+  }
+
+
+/* Wrapper for any blocks placed in the "content top" region */
+/*  #content-top 
+
+  {
+
+  }*/
+
+
+
+  #content-header /* Wrapper for breadcrumb, title, messages, tabs, and help */
+
+  {
+
+  }
+
+
+
+  .breadcrumb /* The path to the current page in the form of a list of links */
+
+  {
+
+    padding-bottom: 0; /* Undo system.css */
+
+	color:#BA0505;
+
+	line-height:18px;
+
+	padding-top:5px;
+
+  }
+
+  
+
+  div.breadcrumb a{
+
+	color:#6A6A6A;
+
+	text-decoration:none;
+
+  }
+
+  
+
+  .breadcrumb a:hover{
+
+	color:#BA0505;
+
+	text-decoration:none;
+
+  }
+
+
+
+  h1.title, /* The title of the page */
+
+  h2.title, /* Block title or the title of a piece of content when it is given in a list of content */
+
+  h3.title /* Comment title */
+
+  {
+
+    margin: 0;
+
+  }
+
+
+
+  div.messages /* Important messages (status, warning, and error) for the user */
+
+  {
+
+  }
+
+
+
+  div.status /* Normal priority messages */
+
+  {
+
+  }
+
+
+
+  div.warning, tr.warning /* Medium priority messages */
+
+  {
+
+    /* border: 1px solid #f0c020; */ /* Drupal core uses: 1px solid #f0c020 */
+
+  }
+
+
+
+  div.error, tr.error /* High priority messages. See also the .error declaration below. */
+
+  {
+
+  }
+
+
+
+  div.tabs /* See also the tabs.css file. */
+
+  {
+
+  }
+
+
+
+  .help /* Help text on a page */
+
+  {
+
+    margin: 1em 0;
+
+  }
+
+
+
+  .more-help-link /* Link to more help */
+
+  {
+
+    font-size: 0.85em;
+
+    text-align: right;
+
+  }
+
+
+
+  #content-area /* Wrapper for the actual page content */
+
+  {
+
+  	padding-right: 15px;
+
+  }
+
+
+
+  ul.links /* List of links */
+
+  {
+
+    margin: 1em 0;
+
+    padding: 0;
+
+  }
+
+
+
+  ul.links.inline
+
+  {
+
+    margin: 0;
+
+    display: inline;
+
+  }
+
+
+
+  ul.links li
+
+  {
+
+    display: inline;
+
+    list-style-type: none;
+
+    padding: 0 0.5em;
+
+  }
+
+
+
+  .pager /* A list of page numbers when more than 1 page of content is available */
+
+  {
+
+    clear: both;
+
+    margin: 1em 0;
+
+    text-align: center;
+
+  }
+
+
+
+  .pager a, .pager strong.pager-current
+
+  {
+
+    padding: 0.5em;
+
+  }
+
+
+
+  .feed-icons /* The links to the RSS or Atom feeds for the current list of content */
+
+  {
+
+    margin: 1em 0;
+
+  }
+
+
+
+  #content-bottom /* Wrapper for any blocks placed in the "content bottom" region */
+
+  {
+
+  }
+
+
+
+/** navbar **/
+
+  #navbar
+
+  {
+
+  }
+
+
+
+  #navbar-inner
+
+  {
+
+  }
+
+
+
+  #search-box /* Wrapper for the search form */
+
+  {
+
+  }
+
+
+
+  #edit-search-theme-form-1-wrapper label /* Label that says "Search this site:" */
+
+  {
+
+    display: none;
+
+  }
+
+
+
+  #primary /* Primary links */
+
+  {
+
+  }
+
+
+
+  #secondary /* Secondary links */
+
+  {
+
+  }
+
+
+
+/** sidebar-left **/
+
+  #sidebar-left
+
+  {
+
+  }
+
+
+
+  #sidebar-left-inner
+
+  {
+
+  }
+
+
+
+/** sidebar-right **/
+
+  #sidebar-right
+
+  {
+
+  	border-left:1px solid #C9C9C6;
+
+  	margin-bottom:10px;
+
+  }
+
+
+
+/*  #sidebar-right-inner
+
+  {
+
+  }*/
+
+
+
+/** footer **/
+
+  #footer
+
+  {
+
+  }
+
+
+
+  #footer-inner
+
+  {
+
+  }
+
+
+
+  #footer-message /* Wrapper for the footer message from Drupal's "Site information"
+
+                     and for any blocks placed in the footer region */
+
+  {
+
+  	clear:both;
+
+	padding-left:325px;
+
+	text-align:left;
+
+  }
+
+
+
+/** closure **/
+
+  #closure-blocks /* Wrapper for any blocks placed in the closure region */
+
+  {
+
+  }
+
+
+
+/** Drupal nodes **/
+
+  .node /* Node wrapper */
+
+  {
+
+  }
+
+
+
+  .node-inner /* Additional wrapper for node */
+
+  {
+
+  }
+
+
+
+  .sticky /* A sticky node (displayed before others in a list) */
+
+  {
+
+  }
+
+
+
+  .node-unpublished /* Unpublished nodes */
+
+  {
+
+    /* background-color: #fff4f4; */ /* Drupal core uses a #fff4f4 background */
+
+  }
+
+
+
+  .node-unpublished div.unpublished, /* The word "Unpublished" displayed beneath the content. */
+
+  .comment-unpublished div.unpublished
+
+  {
+
+    height: 0;
+
+    overflow: visible;
+
+    color: #d8d8d8;
+
+    font-size: 75px;
+
+    line-height: 1;
+
+    font-family:"Lucida Sans Unicode","Lucida Sans","Lucida Grande",verdana,arial,helvetica;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    text-align: center;
+
+    word-wrap: break-word; /* A very nice CSS3 property */
+
+  }
+
+
+
+  .node-mine /* A node created by the current user */
+
+  {
+
+  }
+
+
+
+  .node-teaser /* A node displayed as teaser */
+
+  {
+
+  }
+
+
+
+  /* All nodes are given a node-type-FOO class that describes the type of
+
+   * content that it is. If you create a new content type called
+
+   * "my-custom-type", it will receive a "node-type-my-custom-type" class.
+
+   */
+
+  .node-type-page /* Page content node */
+
+  {
+
+  }
+
+
+
+  .node-type-story /* Story content node */
+
+  {
+
+  }
+
+
+
+  .node h2.title /* Node title */
+
+  {
+
+  }
+
+
+
+  .marker /* "New" or "Updated" marker for content that is new or updated for the current user */
+
+  {
+
+    color: #c00;
+
+  }
+
+
+
+  .node .picture /* The picture of the node author */
+
+  {
+
+  }
+
+
+
+  .node.node-unpublished .picture,
+
+  .comment.comment-unpublished .picture
+
+  {
+
+    position: relative; /* Otherwise floated pictures will appear below the "Unpublished" text. */
+
+  }
+
+
+
+  .node .meta /* Wrapper for submitted and terms data */
+
+  {
+
+  }
+
+
+
+  .node .submitted /* The "posted by" information */
+
+  {
+
+  }
+
+
+
+  .node .terms /* Node terms (taxonomy) */
+
+  {
+
+  }
+
+
+
+  .node .content /* Node's content wrapper */
+
+  {
+
+  }
+
+
+
+  .node ul.links /* Node links. See also the ul.links declaration above. */
+
+  {
+
+  }
+
+
+
+  .preview .node /* Preview of the content before submitting new or updated content */
+
+  {
+
+    /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
+
+  }
+
+
+
+/** Drupal comments **/
+
+  #comments /* Wrapper for the list of comments and its title */
+
+  {
+
+    margin: 1em 0;
+
+  }
+
+
+
+  #comments-title /* Heading for the list of comments */
+
+  {
+
+  }
+
+
+
+  .comment /* Wrapper for a single comment */
+
+  {
+
+  }
+
+
+
+  .comment-inner /* Additional wrapper for a single comment */
+
+  {
+
+  }
+
+
+
+  .comment-preview /* Preview of the comment before submitting new or updated comment */
+
+  {
+
+  }
+
+
+
+  .comment.new /* A new comment since the user last viewed the page. */
+
+  {
+
+  }
+
+
+
+  .comment.odd /* An odd-numbered comment in the list of comments */
+
+  {
+
+  }
+
+
+
+  .comment.even /* An even-numbered comment in the list of comments */
+
+  {
+
+  }
+
+
+
+  .comment.first /* The first comment in the list of comments */
+
+  {
+
+  }
+
+
+
+  .comment.last /* The last comment in the list of comments */
+
+  {
+
+  }
+
+
+
+  .comment-unpublished /* Unpublished comments */
+
+  {
+
+    /* background-color: #fff4f4; */ /* Drupal core uses a #fff4f4 background */
+
+  }
+
+
+
+  .comment-unpublished div.unpublished /* The word "Unpublished" displayed beneath the content. See also the div.unpublished declaration in the node section above. */
+
+  {
+
+  }
+
+
+
+  .comment-published /* Published comments */
+
+  {
+
+  }
+
+
+
+  .comment-by-anon /* A comment created by an anonymous user */
+
+  {
+
+  }
+
+
+
+  .comment-by-author /* A comment created by the node's author */
+
+  {
+
+  }
+
+
+
+  .comment-mine /* A comment created by the current user */
+
+  {
+
+  }
+
+
+
+  .comment h3.title /* Comment title */
+
+  {
+
+  }
+
+
+
+  .new /* "New" marker for comments that are new for the current user */
+
+  {
+
+    color: #c00;
+
+  }
+
+
+
+  .comment .picture /* The picture of the comment author */
+
+  {
+
+  }
+
+
+
+  .comment .submitted /* The "posted by" information */
+
+  {
+
+  }
+
+
+
+  .comment .content /* Comment's content wrapper */
+
+  {
+
+  }
+
+
+
+  .comment .user-signature /* The user's signature */
+
+  {
+
+  }
+
+
+
+  .comment ul.links /* Comment links. See also the ul.links declaration above. */
+
+  {
+
+    margin: 1em 0;
+
+  }
+
+
+
+  .indented /* Nested comments are indented */
+
+  {
+
+    /* margin-left: 25px; */ /* Drupal core uses a 25px left margin */
+
+  }
+
+
+
+  .preview .comment /* Preview of the comment before submitting new or updated comment */
+
+  {
+
+    /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
+
+  }
+
+
+
+/** Drupal blocks **/
+
+  .block /* Block wrapper */
+
+  {
+
+    margin-bottom: 0em;
+
+  }
+
+
+
+  .block.region-odd /* Zebra striping for each block in the region */
+
+  {
+
+  }
+
+
+
+  .block.region-even /* Zebra striping for each block in the region */
+
+  {
+
+  }
+
+
+
+  .block.odd /* Zebra striping independent of each region */
+
+  {
+
+  }
+
+
+
+  .block.even /* Zebra striping independent of each region */
+
+  {
+
+  }
+
+
+
+  .region-count-1 /* Incremental count for each block in the region */
+
+  {
+
+  }
+
+
+
+  .count-1 /* Incremental count independent of each region */
+
+  {
+
+  }
+
+
+
+  .block-inner /* Additional wrapper for block */
+
+  {
+
+  }
+
+
+
+  .block h2.title /* Block title */
+
+  {
+
+  }
+
+
+
+  .block .content /* Block's content wrapper */
+
+  {
+
+  }
+
+
+
+  #block-aggregator-category-1 /* Block for the latest news items in the first category */
+
+  {
+
+  }
+
+
+
+  #block-aggregator-feed-1 /* Block for the latest news items in the first feed */
+
+  {
+
+  }
+
+
+/* First administrator-defined block */
+
+/*  #block-block-1 
+  {
+
+  }
+*/
+
+
+  #block-blog-0 /* "Recent blog posts" block */
+
+  {
+
+  }
+
+
+
+  #block-book-0 /* "Book navigation" block for the current book's table of contents */
+
+  {
+
+  }
+
+
+
+  #block-comment-0 /* "Recent comments" block */
+
+  {
+
+  }
+
+
+
+  #block-forum-0 /* "Active forum topics" block */
+
+  {
+
+  }
+
+
+
+  #block-forum-1 /* "New forum topics" block */
+
+  {
+
+  }
+
+
+
+  #block-menu-primary-links /* "Primary links" block */
+
+  {
+
+  }
+
+
+
+  #block-menu-secondary-links /* "Secondary links" block */
+
+  {
+
+  }
+
+
+
+  #block-node-0 /* "Syndicate" block for primary RSS feed */
+
+  {
+
+  }
+
+
+
+  #block-poll-0 /* "Most recent poll" block */
+
+  {
+
+  }
+
+
+
+  #block-profile-0 /* "Author information" block for the profile of the page's author */
+
+  {
+
+  }
+
+
+
+  #block-search-0 /* "Search form" block */
+
+  {
+
+  }
+
+
+
+  #block-statistics-0 /* "Popular content" block */
+
+  {
+
+  }
+
+
+
+  #block-user-0 /* "User login form" block */
+
+  {
+
+  }
+
+
+
+  #block-user-1 /* "Navigation" block for Drupal navigation menu */
+
+  {
+
+  }
+
+
+
+  #block-user-2 /* "Who's new" block for a list of the newest users */
+
+  {
+
+  }
+
+
+
+  #block-user-3 /* "Who's online" block for a list of the online users */
+
+  {
+
+  }
+
+
+
+/** Drupal boxes **/
+
+  /* Wrapper for Comment form, Comment viewing options, Menu admin, and
+
+   * Search results.
+
+   */
+
+  .box /* Wrapper for box */
+
+  {
+
+  }
+
+
+
+  .box-inner /* Additional wrapper for box */
+
+  {
+
+  }
+
+
+
+  .box h2.title /* Box title */
+
+  {
+
+  }
+
+
+
+  .box .content /* Box's content wrapper */
+
+  {
+
+  }
+
+
+
+/** Miscellaneous Drupal styles **/
+
+  .error /* Errors that are separate from div.messages status messages (see above.) */
+
+  {
+
+    /* color: #e55; */ /* Drupal core uses a #e55 background */
+
+  }
+
+
+
+  .warning /* Warnings that are separate from div.messages status messages (see above.) */
+
+  {
+
+    /* color: #e09010; */ /* Drupal core uses a #e09010 background */
+
+  }
+
+
+
+  .more-link /* Aggregator, blog, and forum more link */
+
+  {
+
+    text-align: right;
+
+  }
+
+
+
+  #user-login-form /* Drupal's default login form */
+
+  {
+
+    text-align: left;
+
+  }
+
+
+
+  tr.even /* Some tables have rows marked even or odd. */
+
+  {
+
+    /* background-color: #eee; */ /* Drupal core uses a #eee background */
+
+  }
+
+
+
+  tr.odd
+
+  {
+
+    /* background-color: #eee; */ /* Drupal core uses a #eee background */
+
+  }
+
+
+
+  li a.active /* The active item in a Drupal menu */
+
+  {
+
+    color: #000;
+
+  }
+
+
+
+
+
+/** Drupal forms **/
+
+  .form-item, /* Wrapper for a form element (or group of form elements) and its label */
+
+  .form-checkboxes,
+
+  .form-radios
+
+  {
+
+    margin: 1em 0;
+
+  }
+
+
+
+  .form-item input.error, /* Highlight the form elements that caused a form submission error */
+
+  .form-item textarea.error,
+
+  .form-item select.error
+
+  {
+
+    border: 2px solid #c00;
+
+  }
+
+
+
+  .form-item label /* The label for a form element */
+
+  {
+
+    display: block;
+
+    font-weight: bold;
+
+  }
+
+
+
+  .form-item label.option /* The label for a radio button or checkbox */
+
+  {
+
+    display: inline;
+
+    font-weight: normal;
+
+  }
+
+
+
+  .form-required /* The part of the label that indicates a required field */
+
+  {
+
+    color: #c00;
+
+  }
+
+
+
+  .form-item .description /* The descriptive help text (separate from the label) */
+
+  {
+
+    font-size: 0.85em;
+
+  }
+
+
+
+  .form-checkboxes .form-item, /* Pack groups of checkboxes and radio buttons closer together */
+
+  .form-radios .form-item
+
+  {
+
+    margin: 0.4em 0;
+
+  }
+
+
+
+  .form-submit /* The submit button */
+
+  {
+
+  }
+
+
+
+  .container-inline div, .container-inline label /* Inline labels and form divs */
+
+  {
+
+    display: inline;
+
+  }
+
+
+
+  .tips /* Tips for Drupal's input formats */
+
+  {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-size: 0.9em;
+
+  }
+
+
+
+/** OpenID **/
+
+  /* The default styling for the OpenID login link seems to assume Garland's
+
+   * styling of list items.
+
+   */
+
+  #user-login-form ul /* OpenID creates a new ul above the login form's links. */
+
+  {
+
+    margin-bottom: 0; /* Position OpenID's ul next to the rest of the links. */
+
+  }
+
+
+
+  #user-login-form li.openid-link /* The "Log in using OpenID" links. */
+
+  {
+
+    margin-top: 1em;
+
+    margin-left: -20px; /* Un-do some of the padding on the ul list. */
+
+  }
+
+
+
+  #user-login-form li.user-link /* The "Cancel OpenID login" links. */
+
+  {
+
+    margin-top: 1em;
+
+  }
+
+
+
+  #user-login ul
+
+  {
+
+    margin: 1em 0;
+
+  }
+
+
+
+  #user-login li.openid-link, /* The OpenID links on the /user form. */
+
+  #user-login li.user-link
+
+  {
+
+    margin-left: -2em; /* Un-do all of the padding on the ul list. */
+
+  }
+
+
+
+/** Drupal admin tables **/
+
+  /* We overrode these styles in html-elements.css, but restore them for the
+
+   * forms on the site.
+
+   */
+
+  form tbody
+
+  {
+
+    border-top: 1px solid #ccc;
+
+  }
+
+
+
+  form th
+
+  {
+
+    text-align: left;
+
+    padding-right: 1em;
+
+    border-bottom: 3px solid #ccc;
+
+  }
+
+
+
+  form tbody th
+
+  {
+
+    border-bottom: 1px solid #ccc;
+
+  }
+
+
+
+  form thead th
+
+  {
+
+    text-align: left;
+
+    padding-right: 1em;
+
+    border-bottom: 3px solid #ccc;
+
+  }
+
+
+
+
+
+.main_title {
+
+	color:#BC1313;
+
+	font-size:18px;
+
+	font-weight:bold;
+
+	padding:10px 0 10px 0;
+
+}
+
+
+
+.title_bdrbtm {
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:transparent url(images/bdr_btm.png) repeat-x scroll left bottom;
+
+	display:block;
+
+	float:left;
+
+	width:100%;
+
+	min-height:20px;
+
+}
+
+
+
+.title_bdrbtm span {
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#FFFFFF none repeat scroll 0 0;
+
+	line-height:normal;
+
+	font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande",		verdana, arial, helvetica;
+
+	font-size-adjust: none;
+
+	font-style: normal;
+
+	font-variant: normal;
+
+	letter-spacing: normal;
+
+	line-height: 20px;
+
+	min-height:20px;
+
+}
+
+
+
+#logo {
+
+	-moz-background-clip: border;
+
+	-moz-background-inline-policy: continuous;
+
+	-moz-background-origin: padding;
+
+	background: transparent url(images/banner_back.png) no-repeat scroll left top;
+
+	height: 112px;
+
+	width: 950px;
+
+}
+
+
+
+#logo .logo_title {
+
+	color: #FFFFFF;
+
+	font-size: 17px;
+
+	padding: 43px 0 0 20px;
+
+	font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande",
+
+		verdana, arial, helvetica;
+
+	font-size-adjust: none;
+
+	font-style: normal;
+
+	font-variant: normal;
+
+	letter-spacing: normal;
+
+	line-height: 13px;
+
+}
+
+
+
+.l_r_outer {
+
+	float: left;
+
+	padding-left: 3px;
+
+	padding-top: 5px;
+
+}
+
+
+
+.login_btn {
+
+	-moz-background-clip: border;
+
+	-moz-background-inline-policy: continuous;
+
+	-moz-background-origin: padding;
+
+	background: transparent url(images/login_back.png) no-repeat scroll left bottom;
+
+	float: left;
+
+	height: 18px;
+
+	padding-top:2px;
+
+	width: 54px;
+
+}
+
+
+
+.login_btn a,.login_btn a:link,.login_btn a:active,.login_btn a:visited
+
+	{
+
+	text-align: center;
+
+	color: #fff;
+
+	font-size: 11px;
+
+	text-decoration: none;
+
+	padding: 1px 12px 3px 12px;
+
+	line-height: 15px;
+
+	font-family:"Lucida Sans Unicode","Lucida Sans","Lucida Grande",verdana,arial,helvetica;
+
+	font-size-adjust:none;
+
+	font-style:normal;
+
+	font-variant:normal;
+
+	font-weight:normal;
+
+	letter-spacing:normal;
+	display:inline-block;
+
+}
+
+
+
+.login_btn a:hover {
+
+	text-decoration: underline;
+
+}
+
+
+
+.register_btn {
+
+	float: left;
+
+	padding-left: 2px;
+
+	background: url(images/register_back.png) left bottom no-repeat;
+
+	width: 102px;
+
+	height: 20px;
+
+}
+
+
+
+.register_btn a,.register_btn a:link,.register_btn a:active,.register_btn a:visited
+
+	{
+
+	text-align: center;
+
+	color: #000;
+
+	font-size: 11px;
+
+	text-decoration: none;
+
+	padding: 1px 29px 3px 29px;
+
+	line-height: 19px;
+
+	font-family:"Lucida Sans Unicode","Lucida Sans","Lucida Grande",verdana,arial,helvetica;
+
+	font-size-adjust:none;
+
+	font-style:normal;
+
+	font-variant:normal;
+
+	font-weight:normal;
+
+	letter-spacing:normal;
+	display:inline-block;
+
+}
+
+
+
+.register_btn a:hover {
+
+	text-decoration: underline;
+
+}
+
+
+
+.tab_left {
+
+	-moz-background-clip: border;
+
+	-moz-background-inline-policy: continuous;
+
+	-moz-background-origin: padding;
+
+	background: transparent url(images/navigation_left.png) no-repeat scroll
+
+		left top;
+
+	float: left;
+
+	height: 31px;
+
+	width: 5px;
+
+}
+
+
+
+.tab_right {
+
+	-moz-background-clip: border;
+
+	-moz-background-inline-policy: continuous;
+
+	-moz-background-origin: padding;
+
+	background: transparent url(images/navigation_right.png) no-repeat
+
+	scroll left top;
+
+	float: left;
+
+	height: 31px;
+
+	width: 5px;
+
+}
+
+
+
+#primary-wrapper {
+
+	float: left;
+
+	padding: 1px 0 0;
+
+	width: 778px;
+
+	text-transform: uppercase;
+
+}
+
+
+
+#primary ul {
+
+	list-style-image: none;
+
+	list-style-position: outside;
+
+	list-style-type: none;
+
+	margin: 0;
+
+	padding: 0;
+
+}
+
+
+
+#primary li {
+
+	-moz-background-clip: border;
+
+	-moz-background-inline-policy: continuous;
+
+	-moz-background-origin: padding;
+
+	background: transparent url(images/navigation_seprator.png) no-repeat
+
+		scroll right top;
+
+	color: #FFFFFF;
+
+	float: left;
+
+	padding: 7px 14px;
+
+}
+
+
+
+#primary  ul li a,#primary  ul li a:link,#primary  ul li a:active,#primary  ul li a:visited
+
+	{
+
+	font-size: 13px;
+
+	font-weight: bold;
+
+	color: #fff;
+
+	text-decoration: none;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+#primary  ul li a:hover {
+
+	color: #bf0505;
+
+	text-decoration: none;
+
+}
+
+
+
+#primary ul li a:active,#primary ul li a.active {
+
+	color: #bf0505;
+
+	text-decoration: none;
+
+}
+
+
+
+#primary  ul li.last {
+
+	float: left;
+
+	padding: 5px 10px;
+
+	color: #fff;
+
+	background: none;
+
+	padding-left:10px;
+
+	padding-right:10px;
+
+	padding-top:7px;
+
+}
+
+
+
+#primary ul li.active-trail a{
+
+	color: #bf0505;
+
+	text-decoration: none;
+
+}
+
+
+
+.clear {
+
+	clear: both;
+
+	line-height: 0;
+
+}
+
+
+
+#block-block-2{	
+
+}
+
+
+
+#block-block-2 h2.title, #block-block-5 h2.title{
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#D6D6D6 none repeat scroll 0 0;
+
+	font-family:Arial,Helvetica,sans-serif;
+
+	font-size:15px;
+
+	font-weight:bold;
+
+	padding:7px 15px;
+
+	margin-bottom:10px;
+
+	line-height:13px;
+
+}
+
+
+
+#block-block-2 ul li{
+
+	background-image:url(images/bullet_red.png);
+
+	background-position:0 6px;
+
+	background-repeat:no-repeat;
+
+	list-style-type:none;
+
+	margin-left:0;
+
+	padding:0 0 5px 20px;
+
+	width:250px;
+
+}
+
+
+
+#block-block-2 ul{
+
+	padding:0 0 5px 8px;
+
+}
+
+
+
+#block-block-5 .content{
+
+	padding-left:14px;	
+
+}
+
+
+
+#footer{
+
+	margin:0px auto;
+
+	padding-top:10px; 
+
+	color:#6c6c6a; 
+
+	text-align:center;
+
+}
+
+
+
+#block-menu-menu-footer{
+
+	color:#6c6c6a;
+
+	text-align:center;
+
+	width:580px;
+
+	*width:560px;
+
+	float:left;
+
+	margin-bottom:0;
+
+}
+
+
+
+#block-menu-menu-footer li{
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:transparent none repeat scroll 0 0;
+
+	border-right:1px solid #6C6C6A;
+
+	float:left;
+
+	font-size:11px;
+
+	line-height:13px;
+
+	list-style-image:none;
+
+	list-style-position:outside;
+
+	list-style-type:none;
+
+	padding-left:2px;
+
+	padding-right:5px;
+
+	padding-top:0;
+
+	text-align:center;
+
+}
+
+
+
+#block-menu-menu-footer li.last{
+
+	list-style:none;
+
+	float:left;
+
+	border:none;
+
+}
+
+
+
+#block-menu-menu-footer ul.menu{
+
+	text-align:center;
+
+}
+
+
+
+#block-menu-menu-footer a, #block-menu-menu-footer a:link, #block-menu-menu-footer a:active, #block-menu-menu-footer a:visited{
+
+	color:#6c6c6a; 
+
+	text-decoration:none; 
+
+	padding:0px 5px; 
+
+	text-align:center;
+
+}
+
+#block-menu-menu-footer a:hover{
+
+	text-decoration:underline;
+
+}
+
+
+
+.paypal_outer{
+
+	padding:0px; 
+
+	float:right;
+
+}
+
+
+
+/*#block-block-1{
+
+	background:#E1E1E1;
+	padding-left:8px;
+	padding-top:10px;
+	padding-bottom:2px;
+	margin-bottom: 1px;
+	border-bottom:0 none;
+	height:249px!important;
+	height:248px;
+	display:inline-block;
+
+}*/
+
+#block-block-1, #block-block-40{
+
+	background:#E1E1E1;
+/*	padding-left:8px;
+	padding-top:10px;
+	padding-bottom:2px;*/
+	border-bottom:1px solid #fff;
+	padding-left:10px;
+	padding-top:10px;
+	height:252px;
+	width:308px;
+	display:block;
+	line-height:normal;
+
+}
+
+
+
+#block-block-1 h2.title, #block-block-40 h2.title{
+
+	color:#BA0505;
+
+	display:block;
+
+	font-size:13px;
+
+	font-weight:bold;
+
+	background:none;
+
+	font-family:"Lucida Sans Unicode","Lucida Sans","Lucida Grande",verdana,arial,helvetica;
+
+	padding:4px 10px;
+
+}
+
+
+
+.webcast_bdr_btm {
+
+	background:transparent url(images/webcast_bdr_btm.png) left top repeat-x;
+
+	width:280px;
+
+	display:block;
+
+	height:15px;
+
+/*	*height:22px;*/
+
+}
+
+
+
+/*html*.webcast_bdr_btm {
+
+	background:transparent url(images/webcast_bdr_btm.png) left top repeat-x;
+
+	width:280px;
+
+	display:block;
+
+	height:22px;
+
+}*/
+
+
+
+#block-block-3{
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#EDEDED url(images/content_back.png) repeat-x scroll left top;
+
+	border-bottom:1px solid #FFFFFF;
+
+	border-right:1px solid #FFFFFF;
+
+	min-height:239px;
+
+	*min-height:239px;
+
+	overflow:hidden;
+
+	padding-left:19px;
+
+	width:609px;
+
+	*width:680px;
+
+	padding-top:14px;
+
+}
+
+
+
+#block-block-3 .client_block {
+
+	float:left;
+
+	padding-right:35px;
+
+	*padding-bottom:30px;
+
+	width:280px;
+
+	*width:320px;
+
+	padding-top:10px;
+
+}
+
+
+
+#block-block-3 .expert_block {
+
+	float:left;
+
+	width:280px;
+
+	padding-top:10px;
+
+}
+
+#block-block-3 ul li {
+
+	background-image:url(images/bullet_red.png);
+
+	background-position:0 6px;
+
+	background-repeat:no-repeat;
+
+	list-style-type:none;
+
+	margin-left:0;
+
+	padding:0 0 5px 20px;
+
+}
+
+
+
+#block-block-3 ul{
+
+	padding:10px 0 0;
+
+}
+
+
+
+#block-block-5{
+
+	border-bottom:0px;
+
+	padding-bottom:10px;
+
+}
+
+
+
+.meet_our_imgl {
+
+	float:left;
+
+	padding-right:10px;
+
+	width:77px;
+
+	padding-top:10px;
+
+}
+
+
+
+.meet_our_imgr_txt {
+
+	float:left;
+
+	width:185px;
+
+	padding-top:60px;
+
+}
+
+
+
+.meet_our_content{
+
+	clear:both;	
+
+}
+
+
+
+.block-title{
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#D6D6D6 none repeat scroll 0 0;
+
+	border-right:1px solid #FFFFFF;
+
+	font-family:Arial,Helvetica,sans-serif;
+
+	font-size:15px;
+
+	font-weight:bold;
+
+	padding:7px 17px;
+
+}
+
+
+
+a, a:link, a:active, a:visited{
+
+	color:#BA0505;
+
+	text-decoration:none; 
+
+	text-align:left;
+	outline:none;
+
+}
+
+a:hover{
+
+	text-decoration:underline;
+
+}
+
+
+
+#block-menu-primary-links{
+
+	width:166px;
+
+}
+
+
+
+#block-menu-primary-links ul li.first, #block-menu-primary-links ul li.collapsed,#block-menu-primary-links ul li.last{
+
+	display:none;
+
+}
+
+
+
+#block-menu-primary-links ul li.expanded{
+
+	/*margin:0px;
+
+	list-style-type:none;
+
+	list-style-image:none;
+
+	background:none;*/
+
+	width:152px;
+
+	background:transparent url(images/menu-active.png) no-repeat scroll 0 0;
+
+	list-style-type:none;
+
+	list-style-image:none;
+
+	margin-top:10px;
+
+	margin-bottom:10px;
+
+	line-height:24px;
+
+	display:block;
+
+}
+
+
+
+#block-menu-primary-links ul li.expanded a{
+
+	list-style-type:none;
+
+	list-style-image:none;
+
+	padding-left:10px;
+
+	text-align:left;
+
+	color:#353531;
+
+	font-size:13px;
+
+	font-weight:bold;
+
+	text-decoration:none;
+
+}
+
+
+
+#block-menu-primary-links ul, #block-menu-primary-links li.expanded ul{
+
+	padding:0px;
+
+	background:none;
+
+}
+
+
+
+#block-menu-primary-links ul li ul li.collapsed, #block-menu-primary-links ul li ul li.leaf{
+
+	display:block;
+
+	padding-bottom:1px;
+
+	*padding-bottom:0px;
+
+	width:156px;
+
+	list-style-type:none;
+
+	list-style-image:none;
+
+}
+
+
+
+#block-menu-primary-links ul li.expanded ul li a{
+
+	list-style-type:none;
+
+	text-decoration:none;
+
+	list-style-image:none;
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#F5F5F5 url(images/left_block_arrow_white.png) no-repeat scroll right center;
+
+	color:#000000;
+
+	display:block;
+
+	font-size:11px;
+
+	margin:0;
+
+	padding:4px 5px 4px 10px;
+
+	text-decoration:none;
+
+	font-weight:normal;
+
+}
+
+
+
+#block-menu-primary-links ul li.expanded ul li.leaf a{
+
+	color:#000000;
+
+}
+
+
+
+#block-menu-primary-links ul li.expanded ul li a.active,#block-menu-primary-links ul li.expanded ul li a:hover{
+
+	color:#BA0505;
+
+	background-color:#F5F5F5;
+
+	background-image:url(images/left_block_arrow.png);
+
+	background-position:right center;
+
+	background-repeat:no-repeat;
+
+	list-style-type:none;
+
+	text-decoration:none;
+
+	font-weight:normal;
+
+}
+
+
+
+#block-menu-primary-links ul li.expanded ul li.active-trail a{
+
+	color:#BA0505;
+
+	font-weight:normal;
+
+}
+
+#backgroundPopup {
+
+	display: none;
+
+	position: fixed;
+
+	_position: absolute; /* hack for internet explorer 6*/
+
+	height: 100%;
+
+	width: 100%;
+
+	top: 0;
+
+	left: 0;
+
+	background: #000000;
+
+	border: 1px solid #cecece;
+
+	z-index: 1;
+
+}
+
+
+
+#popupContact {
+
+	display: none;
+
+	position: fixed;
+
+	_position: absolute; /* hack for internet explorer 6*/
+
+	z-index: 2;
+
+	padding: 12px;
+
+}
+
+
+
+#popupContactClose{
+
+font-size:14px;
+
+line-height:14px;
+
+right:28px;
+
+top:22px;
+
+position:absolute;
+
+color:#6fa5fd;
+
+font-weight:700;
+
+display:block;
+
+}
+
+
+
+/* Popup CSS coding starts here  */
+
+
+
+.dialog {
+
+ width:472px;
+
+ margin:0px;
+
+/* min-width:20em;
+
+ max-width:500px;*/ /* I only cut the left background images out to 800px. You could do much larger, etc. */
+
+}
+
+
+
+.dialog .hd .c,
+
+.dialog .ft .c {
+
+/* font-size:1px;  ensure minimum height */
+
+ height:45px;
+
+}
+
+
+
+.dialog .ft .c {
+
+ height:15px;
+
+}
+
+
+
+.dialog .hd {
+
+ background:transparent url(images/popup_top_left.png) no-repeat 0px 0px;
+
+ margin-right:16px; /* space for right corner */
+
+}
+
+
+
+.dialog .hd .c {
+
+ background:transparent url(images/popup_top_right.png) no-repeat right 0px;
+
+ margin-right:-16px; /* pull right corner back over "empty" space (from above margin) */
+
+}
+
+
+
+.dialog .bd {
+
+ background:transparent url(images/popup_middle_left.png) repeat-y 0px 0px;
+
+ margin-right:16px;
+
+}
+
+
+
+.dialog .bd .c {
+
+ background:transparent url(images/popup_middle_right.png) repeat-y right 0px;
+
+ margin-right:-16px;
+
+}
+
+
+
+.dialog .bd .c .s {
+
+ margin:0px 2px 0px 1px;
+
+/* background:#fff url(ms.jpg) repeat-x 0px 0px;*/
+
+ padding:0px 0px 5px 0px;
+
+}
+
+
+
+.dialog .ft {
+
+ background:transparent url(images/popup_bottom_left.png) no-repeat 0px 0px;
+
+ margin-right:16px;
+
+}
+
+
+
+.dialog .ft .c {
+
+ background:transparent url(images/popup_bottom_right.png) no-repeat right 0px;
+
+ margin-right:-16px;
+
+}
+
+/* Popup CSS coding ends here  */
+
+
+
+#block-user-1 li,#block-user-1 ul{
+
+	background:none;	
+
+}
+
+
+
+ul.primary li{
+
+	background:none;
+
+}
+
+
+
+.padt10{
+
+	padding-top:10px;
+
+}
+
+
+
+.padt3{
+
+	padding-top:3px;
+
+}
+
+
+
+.region-right .block h2.title {
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#D6D6D6 none repeat scroll 0 0;
+
+	font-family:Arial,Helvetica,sans-serif;
+
+	font-size:15px;
+
+	font-weight:bold;
+
+	line-height:13px;
+
+/*	margin-bottom:10px;*/
+
+	padding:7px 15px;
+
+}
+
+
+
+.region-right .block .content{
+	padding-top:10px;
+	padding-left:10px;
+
+	padding-right:20px;
+
+}
+
+
+
+.region-right .block{
+
+	margin-bottom:1px;
+
+	border-bottom:1px solid #C9C9C6;
+
+}
+
+
+
+/* template1 STYLES */
+
+
+
+#template1_content_bottom_left_fixed .block,
+
+#template1_content_bottom_right_fixed .block,
+
+#template1_content_right_top_fixed .block{
+
+	height:250px;
+
+	overflow:hidden;
+
+}
+
+
+
+#template1_content_top_fixed .block{
+
+	height:251px;
+
+	overflow:hidden;
+
+}
+
+
+
+#template1_content_top_fixed .block{
+
+	width:630px;	
+
+}
+
+
+
+#template1_content_bottom_left_fixed .block,
+
+#template1_content_bottom_right_fixed .block,
+
+#template1_content_right_top_fixed .block,
+
+#template1_content_right_bottom .block{
+
+	width:318px;
+
+}
+
+
+
+#template1_content_top_fixed .block h2.title{
+
+	font-family:Arial,Helvetica,sans-serif;
+
+	font-size:15px;
+
+	font-weight:bold;
+
+	line-height:13px;
+
+	margin-bottom:10px;
+
+	padding:7px 15px;
+
+}
+
+
+
+#template1_content_bottom_left_fixed .block h2.title,
+
+#template1_content_bottom_right_fixed .block h2.title,
+
+#template1_content_right_top_fixed .block h2.title,
+
+#template1_content_right_bottom .block h2.title{
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#D6D6D6 none repeat scroll 0 0;
+
+	font-family:Arial,Helvetica,sans-serif;
+
+	font-size:15px;
+
+	font-weight:bold;
+
+	line-height:13px;
+
+	margin-bottom:10px;
+
+	padding:7px 15px;
+
+}
+
+
+
+#template1_content_top_fixed .block .content,
+
+#template1_content_bottom_left_fixed .block .content,
+
+#template1_content_bottom_right_fixed .block .content,
+
+#template1_content_right_top_fixed .block .content,
+
+#template1_content_right_bottom .block .content{
+
+	padding:10px;
+
+}
+
+
+
+#template1_content_bottom_left_fixed .block{
+
+	float:left;
+
+	width:314px;
+
+}
+
+
+
+#template1_content_bottom_right_fixed .block{
+
+	float:left;
+
+	width:314px;
+
+}
+
+
+
+#template1_content_bottom_left_fixed .block{
+
+	border-right:1px solid #C9C9C6;
+
+}
+
+
+
+.content_in_image {
+
+float:left;
+
+padding:0 5px 5px 0;
+
+}
+
+
+
+/* template2 STYLES */
+
+#template2_content_left_fixed,
+
+#template2_content_middle_fixed,
+
+#template2_content_right_fixed,
+
+#template2_content_left_large_fixed,
+
+#template2_content_middle_large_fixed,
+
+#template2_content_right_large_fixed,
+
+#template2_content_left,
+
+#template2_content_middle,
+
+#template2_content_right{
+
+	width:316px;	
+
+}
+
+
+
+#template2_content_left_fixed .block,
+
+#template2_content_middle_fixed .block,
+
+#template2_content_right_fixed .block,
+
+#template2_content_left_large_fixed .block,
+
+#template2_content_middle_large_fixed .block,
+
+#template2_content_right_large_fixed .block,
+
+#template2_content_left .block,
+
+#template2_content_middle .block,
+
+#template2_content_right .block{
+
+	width:315px;	
+
+}
+
+
+
+#template2_content_left_fixed .block,
+
+#template2_content_middle_fixed .block,
+
+#template2_content_right_fixed .block{
+
+	height:250px;
+
+}
+
+
+
+#template2_content_left_large_fixed .block,
+
+#template2_content_middle_large_fixed .block,
+
+#template2_content_right_large_fixed .block{
+
+	height:500px;
+
+}
+
+
+
+#template2_content_left_fixed .block .content,
+
+#template2_content_middle_fixed .block .content,
+
+#template2_content_right_fixed .block .content,
+
+#template2_content_left_large_fixed .block .content,
+
+#template2_content_middle_large_fixed .block .content,
+
+#template2_content_right_large_fixed .block .content,
+
+#template2_content_left .block .content,
+
+#template2_content_middle .block .content,
+
+#template2_content_right .block .content{
+
+	padding:10px;
+
+}
+
+
+
+#template2_content_left_fixed .block h2.title,
+
+#template2_content_middle_fixed .block h2.title,
+
+#template2_content_right_fixed .block h2.title,
+
+#template2_content_left_large_fixed .block h2.title,
+
+#template2_content_middle_large_fixed .block h2.title,
+
+#template2_content_right_large_fixed .block h2.title,
+
+#template2_content_left .block h2.title,
+
+#template2_content_middle .block h2.title,
+
+#template2_content_right .block h2.title{
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#D6D6D6 none repeat scroll 0 0;
+
+	font-family:Arial,Helvetica,sans-serif;
+
+	font-size:15px;
+
+	font-weight:bold;
+
+	line-height:13px;
+
+	margin-bottom:10px;
+
+	padding:7px 15px;
+
+}
+
+
+
+#template2_content_left_fixed .block .content,
+
+#template2_content_middle_fixed .block .content,
+
+#template2_content_right_fixed .block .content{
+
+	height:180px;
+
+	overflow:hidden;
+
+}
+
+
+
+#template2_content_left_large_fixed .block .content,
+
+#template2_content_middle_large_fixed .block .content,
+
+#template2_content_right_large_fixed .block .content{
+
+	height:430px;
+
+	overflow:hidden;
+
+}
+
+
+
+/* homepage STYLES */
+
+
+
+#homepage_content_bottom_left .block,
+
+#homepage_content_bottom_right .block{
+
+	width:318px;
+
+}
+
+
+
+#homepage_content_bottom_left .block{
+
+	float:left;
+
+	width:314px;
+
+}
+
+
+
+#homepage_content_bottom_right .block{
+
+	float:left;
+
+	width:314px;
+
+}
+
+
+
+#homepage_content_bottom_left .block h2.title,
+
+#homepage_content_bottom_right .block h2.title,
+
+#homepage_content_bottom .block h2.title, #content-bottom .block h2.title{
+
+	-moz-background-clip:border;
+
+	-moz-background-inline-policy:continuous;
+
+	-moz-background-origin:padding;
+
+	background:#D6D6D6 none repeat scroll 0 0;
+
+	font-family:Arial,Helvetica,sans-serif;
+
+	font-size:15px;
+
+	font-weight:bold;
+
+	line-height:13px;
+
+	margin-bottom:10px;
+
+	padding:7px 15px;
+
+	display:block;
+
+}
+
+
+
+
+
+
+
+#homepage_content_bottom_left .block{
+
+	border-right:1px solid #C9C9C6;
+
+}
+
+
+
+#homepage_content_bottom_right .block {
+
+	float:left;
+
+	padding-left:1px;
+
+	width:313px;
+
+/*	*width:315px;*/
+
+}
+
+#homepage_content_bottom_left .block {
+
+	float:left;
+
+	width:313px;
+
+}
+
+#homepage_content_bottom .block h2.title{
+
+    text-align: center;
+
+	display: block;
+
+	height:15px;
+
+}
+
+#homepage_content_bottom_left .block .content, 
+
+#homepage_content_bottom_right .block .content{
+
+	padding-left:10px;
+
+	padding-right:10px;
+
+	padding-bottom:10px;
+
+	padding-top:0px;
+
+}
+
+
+
+#homepage_content_bottom_right .block h2.title{
+
+	margin-bottom:0px;
+
+}
+
+
+
+#homepage_content_bottom_left .block, #homepage_content_bottom_right .block {
+
+	margin-bottom:10px;
+
+}
+
+
+
+.steps-bg {
+
+	background:url("/sites/all/themes/teneqs/images/full_image.png") no-repeat scroll 0 0 transparent;
+
+	float:left;
+
+	height:233px;
+
+	width:618px;
+
+        font-family:Arial;
+
+        font-size:11px;
+
+}
+
+.steps-bg-1 {
+
+	background:url("/sites/all/themes/teneqs/images/images_selected_1.png") no-repeat scroll 0 0 transparent;
+
+	float:left;
+
+	height:233px;
+
+	width:618px;
+
+        font-family:Arial;
+
+        font-size:11px;
+
+}
+
+.steps-bg-2 {
+
+	background:url("/sites/all/themes/teneqs/images/images_selected_2.png") no-repeat scroll 0 0 transparent;
+
+	float:left;
+
+	height:233px;
+
+	width:618px;
+
+        font-family:Arial;
+
+        font-size:11px;
+
+}
+
+.steps-bg-3 {
+
+	background:url("/sites/all/themes/teneqs/images/images_selected_3.png") no-repeat scroll 0 0 transparent;
+
+	float:left;
+
+	height:233px;
+
+	width:618px;
+
+        font-family:Arial;
+
+        font-size:11px;
+
+}
+
+.steps-bg-4 {
+
+	background:url("/sites/all/themes/teneqs/images/images_selected_4.png") no-repeat scroll 0 0 transparent;
+
+	float:left;
+
+	height:233px;
+
+	width:618px;
+
+        font-family:Arial;
+
+        font-size:11px;
+
+}
+
+.step-one {
+
+	color:#FFFFFF;
+
+	float:left;
+
+	margin-left:16px;
+
+	margin-top:38px;
+
+	width:109px;
+
+	line-height:16px;
+
+}
+
+.step-two {
+
+	color:#FFFFFF;
+
+	float:left;
+
+	margin-left:57px;
+
+	margin-top:38px;
+
+	width:109px;
+
+	line-height:16px;
+
+}
+
+
+
+.step-three {
+
+	color:#FFFFFF;
+
+	float:left;
+
+	margin-left:51px;
+
+	margin-top:38px;
+
+	width:109px;
+
+	line-height:16px;
+
+}
+
+.step-get-started {
+
+	color:#FFFFFF;
+
+	float:left;
+
+	font-family:Verdana;
+
+	font-size:16px;
+
+	font-weight:bold;
+
+	line-height:23px;
+
+	margin-left:57px;
+
+	margin-top:71px;
+
+	text-align:center;
+
+	width:75px;
+
+}
+
+.step-get-started a, .step-get-started a:link, .step-get-started a:active, .step-get-started a:visited, .step-get-started a:hover   {
+
+	color:#FFFFFF;
+
+}
+
+
+
+.step-experts {
+
+	color:#FFFFFF;
+
+	float:left;
+
+	margin-left:15px;
+
+	margin-top:45px;
+
+	font-weight:bold;
+
+        font-family: Lucida Sans Unicode;
+
+        font-size:13px;
+
+        clear: both;
+
+
+
+}
+
+#content-top {
+
+	margin-left:10px;
+	height:263px;
+	display:block;
+
+}
+
+#content-top .block h2.title {
+
+	padding-bottom:0;
+
+	padding-left:5px;
+
+	padding-top:5px;
+
+	font:bold 16px Arial, Helvetica, sans-serif;
+
+}
+
+.step-title {
+
+	font-size:13px;
+
+	font-weight:bold;
+
+        font-family:Arial;
+
+}
+
+
+
+.template3 #main-inner {
+
+    margin-bottom:-10px;
+
+}
+
+.steps-bg a:link,.steps-bg a:active, .steps-bg a:visited,.steps-bg a:hover,
+
+.steps-bg-1 a:link,.steps-bg-1 a:active, .steps-bg-1 a:visited,.steps-bg-1 a:hover,
+
+.steps-bg-2 a:link,.steps-bg-2 a:active, .steps-bg-2 a:visited,.steps-bg-2 a:hover,
+
+.steps-bg-3 a:link,.steps-bg-3 a:active, .steps-bg-3 a:visited,.steps-bg-3 a:hover,
+
+.steps-bg-4 a:link,.steps-bg-4 a:active, .steps-bg-4 a:visited,.steps-bg-4 a:hover
+
+{
+
+    text-decoration: none;
+
+}
+
+.step-links, .step-links a, .step-links a:link, .step-links a:active, .step-links a:visited,.step-links a:hover {
+
+    text-decoration: underline;
+
+    color: #FFFFFF;
+
+    text-align: center;
+
+    margin-top:10px;
+
+	font-size:11px;
+
+	/**/
+
+}
+
+
+
+.case_studies ul li{
+
+	background-image:url(images/bullet_pdf.png);
+
+	background-position:0 6px;
+
+	background-repeat:no-repeat;
+
+	list-style-type:none;
+
+	margin-left:0;
+
+	padding:7px 0 5px 20px;
+
+	width:250px;
+
+}
+
+.typclient_issues{padding-top:10px;}
+
+.pt5{padding-top:5px;}
+
+.pt10{padding-top:10px;}
+
+.pt15{padding-top:15px;}
+
+.pt20{padding-top:20px;}
+
+.sample_deliverable ul{margin:0px; padding:0px;}
+
+.sample_deliverable ul li{padding:0px; margin:10px 10px; float:left; width:135px; height:105px; border:1px solid #ccc; list-style:none; background-image:none;}
+
+.thankyou-message {
+
+    background:url("images/thanks_screen_img.png") no-repeat scroll 0 0 transparent;
+
+    margin:0 0 20px 14px;
+
+    padding:23px 20px 10px 90px;
+
+}
+
+.web-error-msg{background:none repeat scroll 0 0 #FCD8D8;border:1px solid #BA0505;color:#BA0505;margin:10px;padding:10px;}
+
+
+.home_step_back_out{background: url(images/full_image.png) left top no-repeat; width:617px; height:237px; *height:238px; text-align:left; color:#fff; font:bold 13px Arial, Helvetica, sans-serif;display:inline-block;}
+
+.home_step_back_out1{background: url(images/images_selected_1.png) left top no-repeat; width:617px; height:237px; *height:238px; text-align:left; color:#fff; font:bold 13px Arial, Helvetica, sans-serif; display:inline-block;}
+
+.home_step_back_out2{background: url(images/images_selected_2.png) left top no-repeat; width:617px; height:237px; *height:238px; text-align:left; color:#fff; font:bold 13px Arial, Helvetica, sans-serif;display:inline-block;}
+
+.home_step_back_out3{background: url(images/images_selected_3.png) left top no-repeat; width:617px; height:237px; *height:238px; text-align:left; color:#fff; font:bold 13px Arial, Helvetica, sans-serif;display:inline-block;}
+
+.home_step_back_out4{background: url(images/images_selected_4.png) left top no-repeat; width:617px; height:237px; *height:238px; text-align:left; color:#fff; font:bold 13px Arial, Helvetica, sans-serif;display:inline-block;}
+
+.home_step_back .boxleft{ margin:0px 25px 0px 0px; list-style:none; background:none; float:left; width:115px; padding:45px 0px 0px 20px; height:135px; display:block;}
+
+/*html*.home_step_back .boxleft{ margin:0px 25px 0px 0px; padding:0px; list-style:none; background:none; float:left; width:135px; padding:45px 0px 0px 20px; height:135px; display:block;}*/
+
+html*.home_step_back .boxleft a{ color:#fff; outline:none;}
+
+.home_step_back .boxlast{ margin:0px; padding:0px; list-style:none; background:none; float:left; width:90px; padding:80px 10px 0px 22px; height:110px;}
+
+.home_step_back a, .home_steps_back a:link, .home_steps_back a:active, .home_steps_back a:visited{ color:#fff; text-decoration:none; outline:none;}
+
+.home_step_back a:hover{ color:#fff; text-decoration:none;}
+
+.home_step_back p{margin:0px; padding:0px;}
+
+.home_step_back .boxleft h2.heading{margin:0px; padding:0px; line-height:normal; font:bold 13px Arial, Helvetica, sans-serif; color:#fff;}
+
+.home_step_back .boxlast a{margin:0px; padding:0px; line-height:normal; font:bold 14px Verdana, Arial, Helvetica, sans-serif; text-align:center; color:#fff; width:90px; display:block; outline:none;}
+
+.home_step_back .boxlast p.heading a{color:#fff; text-align:center; outline:none;}
+
+.home_step_back p.small{margin:0px; padding:15px 0px 0px 0px; font-size:12px; text-align:center; text-decoration:underline; font-weight:normal;}
+
+.stepbottom_text{ text-align:left; color:#fff; font:bold 14px Verdana, Arial, Helvetica, sans-serif; padding:0px 10px 0px 15px;}
+/*.stepbottom_text{ text-align:left; color:#fff; font:bold 14px Verdana, Arial, Helvetica, sans-serif; padding:15px 10px 0px 15px;}
+html*.stepbottom_text{ text-align:left; color:#fff; font:bold 14px Verdana, Arial, Helvetica, sans-serif; padding:10px 10px 0px 15px;}*/
+
+.stepbottom_text a, .stepbottom_text a:link, .stepbottom_text a:active, .stepbottom_text a:visited{ color:#fff; text-decoration:none; display:inline-block; outline:none; line-height:38px; height:35px; }
+
+.stepbottom_text a:hover{ color:#fff;}
+
+
+
+#block-block-20 .block-inner .content ul li a {color:#000000;text-decoration:underline; outline:none;}
+
+.clear_new{clear:both; line-height:0px; height:0px;}
+
+
+
+.webform_btn{background: url(images/webform_btn_back.png) left top no-repeat; width:80px; height:26px; border:none; color:#1f1f1f;}
+
+#webform_input textarea{width:384px; font-size:13px;}
+
+.webform_getstarted{margin-left:10px; margin-top: 10px;}
+
+.webform_getstarted ul{margin: 0px; padding: 0px;}
+
+.webform_getstarted ul li{margin: 0px; padding: 0px 10px; float: left; list-style: none; background: none;}
+
+.webform_getstarted ul li.label_left{margin: 1em 0em; padding: 0px; float: left; width: 170px; font-weight: bold;}
+
+.webform_getstarted ul li.text_right{margin: 0px; padding: 0px; float: left; width: 400px;}
+
+.webform_txtwidth input{width:384px;}
+#edit-submitted-commentsquestions{font-size:12px;}
+.padl5{padding-left:5px;}
+.padl8{padding-left:8px;}
+.padl10{padding-left:10px;}
+
+.pgrowthnum ol{margin:5px 0px 0px 35px; padding:0px;}
+.pgrowthnum ol li{list-style-type:decimal; line-height:16px;}

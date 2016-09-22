@@ -1,0 +1,318 @@
+/************* common for mobiles: BELOW 767 PIXEL ******************/
+
+@media only screen and (max-width: 767px) {
+	.share-it-contact-us .sidebar-contact-us {
+		position: static;
+	    float: none;
+	    margin-top: 20px;
+	}
+	.share-it-contact-us .social-links { float: none; }
+	.navbar-collapse {
+		border-top:none;	
+		background:rgba(0, 0, 0, 0.9) none repeat scroll 0 0;
+		float:none;
+		margin-top:0
+	}
+	.navbar-collapse > ul {
+		float:none;	
+	}	
+	.navbar {
+		height:65px;
+	}
+	.navbar-header {
+		margin-top:0;	
+	}
+	.navbar-toggle {
+		margin-top:16px;	
+		margin-bottom:15px;
+	}
+	.navbar-nav > li > a:hover .caret, .nav .open > a:focus .caret {
+		color:#fff !important;	
+		float:right;
+	}
+	.active .caret {
+		color:#BC1B03 !important;	
+		float:right;
+	}
+	.navbar-nav > li {
+		float:left;
+		width:100% !important;	
+		text-align:left;
+	}
+	ul.nav {
+		width:100% !important;
+		float:left;
+		margin-left:0;
+	}
+	.dropdown-menu > li {
+		display:block;
+		text-align:left;	
+	}
+	.login-contact {
+	    float: right;
+	    width: 100%;
+		margin-bottom:20px;
+	}
+	.login-contact li {
+	    width: 50%;
+		text-align:center;
+	}
+	#home-top {
+		min-height:315px;	
+	}
+	.home-page-heading h1 {
+	    font-size: 23px;
+	}
+	.home-page-heading {
+		margin:65px auto auto;
+	}
+	.light-cream-section {
+		min-height:260px;	
+	}
+	.homepage-text {
+		padding:25px 0;	
+	}
+	.white-bg-section {
+		min-height:300px;	
+	}
+	.light-cream-section h2, .white-bg-section h2, .home-engage-us  h2 {
+		font-size:20px;	
+	}
+	.home-engage-us {
+		min-height:460px;	
+		padding:20px 0;
+	}
+	.home-engage-us h3 {
+	    font-size: 28px;
+		margin-bottom:10px;
+	}
+	.opac-white-bg {
+		padding:30px 0;
+	}
+	.home-engage-us a {
+		margin-top:20px;	
+	}
+	.social-links {
+		width:100%;
+		text-align:left;
+		margin:10px 0 0 0;	
+	}
+	.teneqs-logo {
+		margin-bottom:20px;
+	}
+	.footer-links {
+		width:100%;	
+	}
+	#home-top {
+		background-size:cover;
+	}
+	#engage-home {
+		background-size:cover;	
+		padding:30px 0;
+		min-height:475px;
+	}
+	#about-top {
+		background-size:cover;	
+		min-height:605px;
+	}
+	#aboutpageheading {
+		margin:20px 0;	
+	}
+	.home-page-heading p {
+		font-size:16px;
+		padding:0 10px;	
+	}
+	.about-us-text {
+		padding:0;	
+	}
+	#compliance-framework {
+		background-size:cover;	
+	}
+	.select-terms-data-head {
+		padding:10px;	
+	}
+	.world-map {
+		background-size:100%;	
+		min-height:250px;
+		margin:10px 0;
+	}
+	.our-process-section .col-sm-3{
+		margin-bottom:70px !important;
+	}
+	.contact-img {
+		background-size:cover;	
+	}
+	.copyright {
+		width:100%;
+		text-align:center;	
+	}
+	.case-study-img {
+		width:100%;	
+	}
+	.capture-business {
+		padding:40px 0;	
+	}
+	.ten-eqs-ge-support {
+		padding:40px 0;	
+	}
+	.ten-eqs-ge-support h1 {
+		font-size:21px;	
+	}
+	.capture-business h2 {
+		font-size:22px;	
+	}
+	#process, #compliance-framework, #globalreach, #our-team {
+		padding-top:40px !important;	
+	}
+	.our-process-section h4 {
+		text-align:center;	
+	}
+	.adresses-emails li {
+		margin-bottom:10px;	
+	}
+	.adresses-emails li .email-label{
+		float:left;
+		width:100%;
+		margin:0;
+		font-weight:bold;
+	}
+	.our-process-section .col-sm-3 {
+		padding:0 15px;	
+	}
+	.process-arrow {
+		display:none;	
+	}
+	#contact-popup form textarea {
+		height:50px;	
+	}
+	#contact-popup form input, textarea {
+		margin-bottom:10px !important;	
+		height:40px;
+	}
+	#engage-top h1 {
+		font-size:21px;
+		margin:10% 0 !important;
+	}
+	.subject-matter-expert {
+		margin-top:0;	
+	}
+	#managers {
+		min-height:600px;	
+	}
+	.team-cols {
+		float:left;
+		width:48% !important;
+		margin:0 1%;	
+	}
+	header {
+		min-height:65px;	
+	}
+	.share-it-contact-us {
+		margin-top:20px;
+		min-height:245px !important;
+		text-align:left;	
+	}
+
+	.privacy-content {
+		max-height: 450px;
+	}
+	.modal-box { left: 5% !important; min-height: 285px; }
+	.modal-box .modal-body { padding-top: 0; padding-bottom: 5px; }
+	.modal-box .clear { height: 1px; }
+	.team-description { max-height: 300px; }
+	.designation { margin-bottom: 10px; }
+}
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+	.team-description {
+	    max-height: 110px;
+	}
+	.modal-box { left: 6.5% !important; }
+}
+
+
+/************* common for mobiles: BELOW 767 PIXEL ******************/
+
+/************* iPhone5 only ******************/
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+	.modal-box { top: 20% !important; left: 2% !important; width: 96%; }
+	.engage-content-box, .select-terms-data .select-terms-data-content { min-height: auto; }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
+	.modal-box { top: 24% !important; min-height: 200px; }
+	.team-description { max-height: 58px; }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
+	.team-description { max-height: 270px; }
+}
+/************* iPhone5 only ******************/
+
+@media only screen and (max-width: 460px) {
+	.team-cols {
+		float:left;
+		width:98% !important;
+		margin:0 1%;	
+	}		
+}
+/*************IPAD ONLY**************/
+@media only screen and (min-width: 768px)  and (max-width: 1024px) {
+	ul.nav {
+		margin-left: 0px !important;
+	}		
+	.engage-content-box {
+		min-height : 296px;
+		margin-bottom:20px;	
+	}
+	.dropdown-menu > li > a {
+		color: #000 !important;
+		padding: 11px 10px !important;
+	}
+	.select-terms-data-head span {
+		text-align:center;
+		width:100%;
+		margin-bottom:10px;
+		margin-top:0;	
+	}
+	.select-terms-data-head img {
+		text-align:center;
+		width:100%;	
+	}
+	#engage-top h1 {
+		margin:7% 0;	
+	}
+	#engage-top {
+		min-height : 780px;
+	}
+	#experts { background: url(../images/experts.png) no-repeat; }
+	#about-top { background: url(../images/about-top.png) no-repeat; }
+	#engage-top { background: url(../images/engage-top.png) no-repeat; background-size: cover; }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+	#our-team > .container > .container {
+		margin-left: -14px;
+	}
+	#our-team .thumbnail { min-height: 280px; }
+	.select-terms-data .select-terms-data-content {
+		min-height: 865px;
+	}
+	span.emails { display: block; }
+	.email-label { float: none; }
+	.case-study-content { margin-top: 2.5%; }
+	.capture-business .row .col-sm-6 { min-height: 166px; }
+	.modal-box { left: 13% !important; }
+	.engage-content-box { min-height: 436px; }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	#our-team .thumbnail { min-height: 260px; }
+	#our-team > .container > .container {
+		margin-left: -15px;
+	}
+	.select-terms-data .select-terms-data-content {
+		min-height: 625px;
+		overflow-y: auto;
+    	overflow-x: hidden;
+	}
+	.modal-box { left: 21% !important; }
+}
+/*************IPAD ONLY**************/

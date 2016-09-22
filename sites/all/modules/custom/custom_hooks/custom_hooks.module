@@ -1,0 +1,704 @@
+<?php
+
+define('CREATIVE_WEBFORM_NID', 70);
+define('CONTENT_CREATOR_ROLE', 'content creator');
+define('ADMINISTER_USER_ROLE_ID', 3);
+define('MARKETING_TEAM_ROLE_ID', 5);
+
+// $Id:custom_hooks.module,v 1.0 2011/06/15 11:27:00 Deepak Exp $
+
+function custom_hooks_init() {
+  if (arg(1) != 'add' && arg(2) != 'edit') {
+    drupal_add_js(drupal_get_path('theme', 'teneqs_v1') . '/js/jquery-1.4.2.min.js');
+  }
+  if (!defined('CONTENT_CREATOR_ROLE_ACCESS')) {
+    define('CONTENT_CREATOR_ROLE_ACCESS', 'content creator role access');
+  }
+  if (!defined('MARKETING_TEAM_ROLE_ACCESS')) {
+    define('MARKETING_TEAM_ROLE_ACCESS', 'marketing team role access');
+  }
+  if (!defined('ADMINISTOR_USER_ROLE_ACCESS')) {
+    define('ADMINISTOR_USER_ROLE_ACCESS', 'administor user role access');
+  }
+}
+
+/**
+ * Implementation of hook_perm().
+ */
+function custom_hooks_perm() {
+  return array(CONTENT_CREATOR_ROLE_ACCESS, MARKETING_TEAM_ROLE_ACCESS, ADMINISTOR_USER_ROLE_ACCESS);
+}
+
+/**
+ * Implementation of hook_menu()
+ * @return <type> array
+ */
+function custom_hooks_menu() {
+  $items = array();
+  $items['home'] = array(
+    'title' => t(''),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'custom_hooks_home',
+    'access callback' => TRUE
+  );
+  $items['10eqs_media_kit_terms_of_service'] = array(
+    'title' => t(''),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'custom_hooks_10eqs_media_kit_terms_of_service',
+    'access callback' => TRUE
+  );
+  $items['contact_us'] = array(
+    'title' => t(''),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'custom_hooks_contact_us',
+    'access callback' => TRUE
+  );
+  $items['admin/image_upload'] = array(
+    'title' => t('Image Upload'),
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'drupal_get_form',
+	'page arguments' => array('custom_hooks_advisor_researcher_spotlight'),
+    'access callback' => TRUE,
+    //'access arguments' => array('administer nodes')
+  );
+  $items['admin/creative_submissions'] = array(
+    'title' => t('Creative Submissions'),
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'drupal_get_form',
+	'page arguments' => array('custom_hooks_creative_submissions'),
+    'access callback' => TRUE,
+    //'access arguments' => array('administer nodes')
+  );
+  $items['privacy_policy'] = array(
+    'title' => t(''),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'custom_hooks_privacy_policy',
+    'access callback' => TRUE
+  );
+  $items['back_to_referer'] = array(
+    'title' => t(''),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'custom_hooks_back_to_referer',
+    'access callback' => TRUE
+  );
+
+  return $items;
+}
+
+/**
+ * Home callback.
+ */
+function custom_hooks_home() {
+  return '';
+}
+
+/**
+ * 10EQS media kit tems of service popup content callback.
+ */
+function custom_hooks_10eqs_media_kit_terms_of_service() {
+  $block = module_invoke('block', 'block', 'view', 23);
+  echo $block['content'];
+  exit();
+}
+
+/**
+ * Contact us popup content callback.
+ */
+function custom_hooks_contact_us() {
+  $block = module_invoke('block', 'block', 'view', 24);
+  echo $block['content'];
+  exit();
+}
+
+/**
+ * Advisor / Researcher Image Upload.
+ */ 
+function custom_hooks_advisor_researcher_spotlight() {
+	$form['advisor_researcher_image_upload'] = array(
+	  '#title' => t('Advisor / Researcher Spotlight Image Upload'),
+	  '#type' => 'file',
+	  '#size' => 60,
+	  '#description' => 'Only JPEG, JPG, PNG & GIF images are allowed.',
+	  '#required' => FALSE
+	);
+	$form['clients_image_upload'] = array(
+	  '#title' => t('Client Image Upload'),
+	  '#type' => 'file',
+	  '#size' => 60,
+	  '#description' => 'Only JPEG, JPG, PNG & GIF images are allowed.',
+	  '#required' => FALSE
+	);
+	$form['team_image_upload'] = array(
+	  '#title' => t('Leadership / 10EQS Team Image Upload'),
+	  '#type' => 'file',
+	  '#size' => 60,
+	  '#description' => 'Only JPEG, JPG, PNG & GIF images are allowed.',
+	  '#required' => FALSE
+	);
+	$form['newsletter_image_upload'] = array(
+	  '#title' => t('Newsletter Image Upload'),
+	  '#type' => 'file',
+	  '#size' => 60,
+	  '#description' => 'Only JPEG, JPG, PNG & GIF images are allowed.',
+	  '#required' => FALSE
+	);
+	$form['submit'] = array(
+	  '#type' => 'submit',
+	  '#value' => 'Submit'
+	);
+    $form['#attributes']['enctype'] = 'multipart/form-data';
+	return $form;
+}
+
+/**
+ * Implementation of validate handler.
+ */
+function custom_hooks_advisor_researcher_spotlight_validate($form, &$form_state) {
+  if ($_FILES['files']['size']['advisor_researcher_image_upload'] > 0) {
+    $file->filename = $_FILES['files']['name']['advisor_researcher_image_upload'];
+	$error = _file_validate_extensions($file, 'jpeg jpg png gif');
+	if ($error[0]) {
+	  form_set_error('advisor_researcher_image_upload', 'Advisor / Researcher Spotlight Image Upload: ' . $error[0]);
+	}
+  }
+  if ($_FILES['files']['size']['clients_image_upload'] > 0) {
+    $file->filename = $_FILES['files']['name']['clients_image_upload'];
+	$error = _file_validate_extensions($file, 'jpeg jpg png gif');
+	if ($error[0]) {
+	  form_set_error('clients_image_upload', 'Client Image Upload: ' . $error[0]);
+	}
+  }
+  if ($_FILES['files']['size']['team_image_upload'] > 0) {
+    $file->filename = $_FILES['files']['name']['team_image_upload'];
+	$error = _file_validate_extensions($file, 'jpeg jpg png gif');
+	if ($error[0]) {
+	  form_set_error('team_image_upload', 'Leadership / 10EQS Team Image Upload: ' . $error[0]);
+	}
+  }
+  if ($_FILES['files']['size']['newsletter_image_upload'] > 0) {
+    $file->filename = $_FILES['files']['name']['newsletter_image_upload'];
+	$error = _file_validate_extensions($file, 'jpeg jpg png gif');
+	if ($error[0]) {
+	  form_set_error('newsletter_image_upload', 'Newsletter Image Upload: ' . $error[0]);
+	}
+  }
+}
+
+/**
+ * Function checks that the filename ends with an allowed extension.
+ */
+function _file_validate_extensions($file, $extensions) {
+  $errors = array();
+  $regex = '/\.('. ereg_replace(' +', '|', preg_quote($extensions)) .')$/i';
+  if (!preg_match($regex, $file->filename)) {
+    $errors[] = t('Only files with the following extensions are allowed: %files-allowed.', array('%files-allowed' => $extensions));
+  }
+  return $errors;
+}
+
+/**
+ * Implementation of submit handler.
+ */
+function custom_hooks_advisor_researcher_spotlight_submit($form, &$form_state) {
+  // Advisor / Researcher image upload.
+  if ($_FILES['files']['size']['advisor_researcher_image_upload'] > 0) {
+    $advisor_researcher_directory = file_directory_path() .'/images/experts';
+    /*if (file_exists($advisor_researcher_directory . '/' . $_FILES['files']['name']['advisor_researcher_image_upload'])) {
+	  unlink($advisor_researcher_directory . '/' . $_FILES['files']['name']['advisor_researcher_image_upload']);
+	}*/
+    $image_details = file_save_upload('advisor_researcher_image_upload', array(), $advisor_researcher_directory);
+	if (file_exists($image_details->filepath)) {
+	  $filename = explode($advisor_researcher_directory . '/', $image_details->filepath);
+	  $advisor_researcher_status = file_validate_is_image($image_details);
+	  if (count($advisor_researcher_status)) {
+	    file_delete($advisor_researcher_directory . '/' . $_FILES['files']['name']['advisor_researcher_image_upload']);
+	    form_set_error('advisor_researcher_image_upload', 'Advisor / Researcher Spotlight Image Upload: Only files with the following extensions are allowed: jpeg jpg png gif.');
+		return;
+	  }
+	  file_set_status($image_details, FILE_STATUS_PERMANENT);
+	  drupal_set_message('Advisor / Researcher Spotlight Image Upload: "' . $filename[1] . '" has been successfully uploaded.');
+	}
+  }
+  // Client image upload.
+  if ($_FILES['files']['size']['clients_image_upload'] > 0) {
+    $clients_directory = file_directory_path() . '/images/clients';
+    $image_details = file_save_upload('clients_image_upload', array(), $clients_directory);
+	if (file_exists($image_details->filepath)) {
+	  $filename = explode($clients_directory . '/', $image_details->filepath);
+	  $clients_status = file_validate_is_image($image_details);
+	  if (count($clients_status)) {
+	    file_delete($clients_directory . '/' . $_FILES['files']['name']['clients_image_upload']);
+	    form_set_error('clients_image_upload', 'Client Image Upload: Only files with the following extensions are allowed: jpeg jpg png gif.');
+		return;
+	  }
+	  file_set_status($image_details, FILE_STATUS_PERMANENT);
+	  drupal_set_message('Client Image Upload: "' . $filename[1] . '" has been successfully uploaded.');
+	}
+  }
+  // Team image upload.
+  if ($_FILES['files']['size']['team_image_upload'] > 0) {
+    $leadership_10eqs_team_directory = file_directory_path() . '/images/team';
+    /*if (file_exists($leadership_10eqs_team_directory . '/' . $_FILES['files']['name']['team_image_upload'])) {
+	  unlink($leadership_10eqs_team_directory . '/' . $_FILES['files']['name']['team_image_upload']);
+	}*/
+    $image_details = file_save_upload('team_image_upload', array(), $leadership_10eqs_team_directory);
+	if (file_exists($image_details->filepath)) {
+	  $filename = explode($leadership_10eqs_team_directory . '/', $image_details->filepath);
+	  $leadership_10eqs_team_status = file_validate_is_image($image_details);
+	  if (count($leadership_10eqs_team_status)) {
+	    file_delete($leadership_10eqs_team_directory . '/' . $_FILES['files']['name']['team_image_upload']);
+	    form_set_error('team_image_upload', 'Leadership / 10EQS Team Image Upload: Only files with the following extensions are allowed: jpeg jpg png gif.');
+		return;
+	  }
+	  file_set_status($image_details, FILE_STATUS_PERMANENT);
+	  drupal_set_message('Leadership / 10EQS Team Image Upload: "' . $filename[1] . '" has been successfully uploaded.');
+	}
+  }
+  // Newsletter image upload.
+  if ($_FILES['files']['size']['newsletter_image_upload'] > 0) {
+    $newsletter_directory = file_directory_path() . '/images/newsletter';
+    $image_details = file_save_upload('newsletter_image_upload', array(), $newsletter_directory);
+	if (file_exists($image_details->filepath)) {
+	  $filename = explode($newsletter_directory . '/', $image_details->filepath);
+	  $newsletter_status = file_validate_is_image($image_details);
+	  if (count($newsletter_status)) {
+	    file_delete($newsletter_directory . '/' . $_FILES['files']['name']['newsletter_image_upload']);
+	    form_set_error('newsletter_image_upload', 'Newsletter Image Upload: Only files with the following extensions are allowed: jpeg jpg png gif.');
+		return;
+	  }
+	  file_set_status($image_details, FILE_STATUS_PERMANENT);
+	  drupal_set_message('Newsletter Image Upload: "' . $filename[1] . '" has been successfully uploaded.');
+	}
+  }
+}
+
+/**
+ * Export creative submissions callback.
+ */
+function custom_hooks_creative_submissions() {
+  $query = '';
+  $args = array();
+  $args[] = CREATIVE_WEBFORM_NID;
+  if ($_GET['start'] && $_GET['end']) {
+    $query = 'AND ws.submitted >= %d AND ws.submitted <= %d';
+	$start_time_arr = explode('/', $_GET['start']);
+	$start_timestamp = mktime(0, 0, 0, $start_time_arr[0], $start_time_arr[1], $start_time_arr[2]);
+	$end_time_arr = explode('/', $_GET['end']);
+	$end_timestamp = mktime(23, 59, 59, $end_time_arr[0], $end_time_arr[1], $end_time_arr[2]);
+    $args[] = $start_timestamp;
+    $args[] = $end_timestamp;
+	if ($start_timestamp > $end_timestamp) {
+	  form_set_error('', 'Start date can not be forward from End date.');
+	}
+  }
+  $sql = "SELECT ws.sid, ws.submitted, ws.remote_addr, wsd.cid, wsd.data FROM {webform_submissions} ws INNER JOIN {webform_submitted_data} wsd ON ws.sid = wsd.sid WHERE ws.nid = %d $query";
+  $result = db_query($sql, $args);
+  $html = '';
+  $html = '<table>';
+  $html .= '<th align="left">First Name</th><th align="left">Last Name</th><th align="left">Email</th><th align="left">Confirm Email</th><th align="left">Date</th><th align="left">IP Address</th>';
+  while ($row = db_fetch_object($result)) {
+    $rows[$row->sid]['submitted'] = $row->submitted;
+    $rows[$row->sid]['remote_addr'] = $row->remote_addr;
+    $rows[$row->sid]['cid'][$row->cid] = $row->data;
+  }
+  if (count($rows)) {
+    foreach ($rows as $sid => $details) {
+      $html .= '<tr><td>' . $details['cid'][1] . '</td><td>' . $details['cid'][2] . '</td><td>' . $details['cid'][3] . '</td><td>' . $details['cid'][4] . '</td><td>' . date('m/d/Y', $details['submitted']) . '</td><td>' . $details['remote_addr'] . '</td></tr>';
+	}
+  }
+  $html .= '</table>';
+  if (count($rows)) {
+    _generate_xls('Creative_Submissions.xls', $html);
+  }
+  else {
+    drupal_set_message('No submissions available during this period.');
+  }
+}
+
+/**
+ * Function to generate xls file.
+ */
+function _generate_xls($filename, $content) {
+  header("Content-Type: application/vnd.ms-excel;");
+  header("Expires: 1");
+  header("Cache-Control: must-revalidate, post-check=1, pre-check=1");
+  header("content-disposition: attachment;filename=$filename");
+  echo $content;
+  exit();
+}
+
+/**
+ * Implementation of hook_link_alter().
+ */
+function custom_hooks_link_alter(&$links, $node) {
+  if (($node->type == 'webform' || $node->type == 'industries_functions' || $node->type == 'industry_practices' || $node->type == 'localized_landing_page' || $node->type == '10eqs_team') && $links['comment_add'] || $links['comment_forbidden']) {
+    unset($links['comment_add']);
+    unset($links['comment_forbidden']);
+  }
+}
+
+/**
+ * Privacy policy popup callback.
+ */
+function custom_hooks_privacy_policy() {
+  $block = module_invoke('block', 'block', 'view', 28);
+  echo $block['content'];
+  exit();
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function custom_hooks_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'webform_client_form_64') {
+     $form['#validate'][] = 'webform_extra_validate_64';
+     $node->webform['redirect_url'] = $_SERVER[HTTP_REFERER]; 
+/*    $first = array_shift($form['#submit']);
+    array_unshift($form['#submit'], $first, 'webform_extra_submit_64');
+*/
+    $messages = drupal_get_messages(NULL, FALSE);
+	if (count($messages['status'])) {
+      $form['submitted']['event_tracker'] = array(
+        '#type' => 'markup',
+        '#title' => 'Event tracker',
+        '#value' => "<script type='text/javascript'>_gaq.push(['_trackEvent', 'clients-form', 'submit', 'client']);</script>"
+      );
+	  //echo "<script type='text/javascript'>_gaq.push(['_trackEvent', 'clients-form', 'submit', 'client']);</script>";
+	}
+  }
+  else if ($form_id == 'webform_client_form_108') {
+    $form['message'] = array(
+      '#type' => 'markup',
+      '#value' => "<div style='margin-top:10px; font-size:14px;'><div><span style='font-weight:bold;'>*</span>The answer to your contest question will be provided by up to 3 experts. 10EQS will provide answers to the first 15 BMA participants (one entry per company) that answer this crowdsourcing question correctly. Entries must be submitted by May 29, 2014.</div><div class='text-bottom'>Want to talk it over? Come see us in the 10EQS booth and we'll  help!</div></div>",
+      '#weight' => 1001
+    );
+  }
+  else if ($form_id == 'page_node_form') {
+    if (!user_access('administor user role access') && !user_access('marketing team role access')) {
+	  $form['field_approve_disapprove']['#prefix'] = '<span style="display:none;">';
+	  $form['field_approve_disapprove']['#suffix'] = '</span>';
+	}
+  }
+  else if ($form_id == 'industries_functions_node_form') {
+    if (!user_access('administor user role access') && !user_access('marketing team role access')) {
+	  $form['field_if_approve_disapprove']['#prefix'] = '<span style="display:none;">';
+	  $form['field_if_approve_disapprove']['#suffix'] = '</span>';
+	}
+  }
+  else if ($form_id == 'node_admin_content') {
+    if (!user_access('administer nodes')) {
+	  $form['filters']['#prefix'] = '<span style="display:none;">';
+	  $form['filters']['#suffix'] = '</span>';
+	  $form['admin']['options']['#prefix'] = '<span style="display:none;">';
+	  $form['admin']['options']['#suffix'] = '</span>';
+	  unset($form['admin']['nodes']);
+	}
+  }
+  elseif ($form_id == 'industry_practices_node_form') {
+    if (!user_access('administor user role access') && !user_access('marketing team role access')) {
+	  $form['field_ip_approve_disapprove']['#prefix'] = '<span style="display:none;">';
+	  $form['field_ip_approve_disapprove']['#suffix'] = '</span>';
+	}
+  }
+  elseif ($form_id == 'localized_landing_page_node_form') {
+    if (!user_access('administor user role access') && !user_access('marketing team role access')) {
+	  $form['field_llp_approve_disapprove']['#prefix'] = '<span style="display:none;">';
+	  $form['field_llp_approve_disapprove']['#suffix'] = '</span>';
+	}
+  }
+  if ($form_id == 'page_node_form' || $form_id == 'industries_functions_node_form' || $form_id == 'industry_practices_node_form' || $form_id == 'localized_landing_page_node_form') {
+    if (user_access('marketing team role access')) {
+      $form['options']['#access'] = TRUE;
+	}
+  }
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function custom_hooks_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+  switch($op) {
+    case 'prepare':
+	  if ($node->type == 'page') {
+	    global $user;
+		if (in_array(CONTENT_CREATOR_ROLE, $user->roles)) {
+		  $node->field_approve_disapprove[0]['value'] = 0;
+		}
+	  }
+	  elseif ($node->type == 'industries_functions') {
+	    global $user;
+		if (in_array(CONTENT_CREATOR_ROLE, $user->roles)) {
+		  $node->field_if_approve_disapprove[0]['value'] = 0;
+		}
+	  }
+	  elseif ($node->type == 'industry_practices') {
+	    global $user;
+		if (in_array(CONTENT_CREATOR_ROLE, $user->roles)) {
+		  $node->field_ip_approve_disapprove[0]['value'] = 0;
+		}
+	  }
+	  elseif ($node->type == 'localized_landing_page') {
+	    global $user;
+		if (in_array(CONTENT_CREATOR_ROLE, $user->roles)) {
+		  $node->field_llp_approve_disapprove[0]['value'] = 0;
+		}
+	  }
+	break;
+	case 'load':
+	  if ($node->type == 'page' && $node->field_approve_disapprove[0]['value'] == 0 && !user_access('content creator role access') && !user_access('administer nodes') && !user_access('marketing team role access')) {
+	    $sql = "SELECT vid FROM {content_type_page} WHERE nid = %d AND field_approve_disapprove_value = %d ORDER BY vid DESC LIMIT 1";
+		$args = array();
+		$args[] = $node->nid;
+		$args[] = 1;
+		$vid = db_result(db_query($sql, $args));
+		if ($vid) {
+		  $node = custom_node_load(array('nid' => $node->nid), $vid);
+		}
+		else {
+	      $sql = "SELECT vid FROM {node_revisions} WHERE nid = %d ORDER BY vid ASC LIMIT 1";
+		  $args = array();
+		  $args[] = $node->nid;
+		  $vid = db_result(db_query($sql, $args));
+		  if ($vid) {
+		    $node = custom_node_load(array('nid' => $node->nid), $vid);
+		  }
+		}
+	  }
+	  elseif ($node->type == 'industries_functions' && $node->field_if_approve_disapprove[0]['value'] == 0 && !user_access('content creator role access') && !user_access('administer nodes') && !user_access('marketing team role access')) {
+	    $sql = "SELECT vid FROM {content_type_industries_functions} WHERE nid = %d AND field_if_approve_disapprove_value = %d ORDER BY vid DESC LIMIT 1";
+		$args = array();
+		$args[] = $node->nid;
+		$args[] = 1;
+		$vid = db_result(db_query($sql, $args));
+		if ($vid) {
+		  $node = custom_node_load(array('nid' => $node->nid), $vid);
+		}
+		else {
+	      $sql = "SELECT vid FROM {node_revisions} WHERE nid = %d ORDER BY vid ASC LIMIT 1";
+		  $args = array();
+		  $args[] = $node->nid;
+		  $vid = db_result(db_query($sql, $args));
+		  if ($vid) {
+		    $node = custom_node_load(array('nid' => $node->nid), $vid);
+		  }
+		}
+	  }
+	  elseif ($node->type == 'industry_practices' && $node->field_ip_approve_disapprove[0]['value'] == 0 && !user_access('content creator role access') && !user_access('administer nodes') && !user_access('marketing team role access')) {
+	    $sql = "SELECT vid FROM {content_type_industry_practices} WHERE nid = %d AND field_ip_approve_disapprove_value = %d ORDER BY vid DESC LIMIT 1";
+		$args = array();
+		$args[] = $node->nid;
+		$args[] = 1;
+		$vid = db_result(db_query($sql, $args));
+		if ($vid) {
+		  $node = custom_node_load(array('nid' => $node->nid), $vid);
+		}
+		else {
+	      $sql = "SELECT vid FROM {node_revisions} WHERE nid = %d ORDER BY vid ASC LIMIT 1";
+		  $args = array();
+		  $args[] = $node->nid;
+		  $vid = db_result(db_query($sql, $args));
+		  if ($vid) {
+		    $node = custom_node_load(array('nid' => $node->nid), $vid);
+		  }
+		}
+	  }
+	  elseif ($node->type == 'localized_landing_page' && $node->field_llp_approve_disapprove[0]['value'] == 0 && !user_access('content creator role access') && !user_access('administer nodes') && !user_access('marketing team role access')) {
+	    $sql = "SELECT vid FROM {content_type_localized_landing_page} WHERE nid = %d AND field_llp_approve_disapprove_value = %d ORDER BY vid DESC LIMIT 1";
+		$args = array();
+		$args[] = $node->nid;
+		$args[] = 1;
+		$vid = db_result(db_query($sql, $args));
+		if ($vid) {
+		  $node = custom_node_load(array('nid' => $node->nid), $vid);
+		}
+		else {
+	      $sql = "SELECT vid FROM {node_revisions} WHERE nid = %d ORDER BY vid ASC LIMIT 1";
+		  $args = array();
+		  $args[] = $node->nid;
+		  $vid = db_result(db_query($sql, $args));
+		  if ($vid) {
+		    $node = custom_node_load(array('nid' => $node->nid), $vid);
+		  }
+		}
+	  }
+	break;
+	case 'insert':
+	  if ($node->type == 'page' || $node->type == 'industries_functions' || $node->type == 'industry_practices' || $node->type == 'localized_landing_page') {
+	    send_content_create_update_mail_alert($node);
+	  }
+	break;
+	case 'update':
+	  if ($node->type == 'page' || $node->type == 'industries_functions' || $node->type == 'industry_practices' || $node->type == 'localized_landing_page') {
+	    send_content_create_update_mail_alert($node);
+	  }
+	break;
+	case 'delete':
+	  if ($node->type == 'page' || $node->type == 'industries_functions' || $node->type == 'industry_practices' || $node->type == 'localized_landing_page') {
+	    send_content_create_update_mail_alert($node);
+      }
+	break;
+  }
+}
+
+/**
+ * Custom node load function.
+ */
+function custom_node_load($param = array(), $revision = NULL, $reset = NULL) {
+  static $nodes = array();
+  if ($reset) {
+    $nodes = array();
+  }
+  $cachable = ($revision == NULL);
+  $arguments = array();
+  if (is_numeric($param)) {
+    if ($cachable) {
+      // Is the node statically cached?
+      if (isset($nodes[$param])) {
+        return is_object($nodes[$param]) ? drupal_clone($nodes[$param]) : $nodes[$param];
+      }
+    }
+    $cond = 'n.nid = %d';
+    $arguments[] = $param;
+  }
+  elseif (is_array($param)) {
+    // Turn the conditions into a query.
+    foreach ($param as $key => $value) {
+      $cond[] = 'n.'. db_escape_table($key) ." = '%s'";
+      $arguments[] = $value;
+    }
+    $cond = implode(' AND ', $cond);
+  }
+  else {
+    return FALSE;
+  }
+  // Retrieve a field list based on the site's schema.
+  $fields = drupal_schema_fields_sql('node', 'n');
+  $fields = array_merge($fields, drupal_schema_fields_sql('node_revisions', 'r'));
+  $fields = array_merge($fields, array('u.name', 'u.picture', 'u.data'));
+  // Remove fields not needed in the query: n.vid and r.nid are redundant,
+  // n.title is unnecessary because the node title comes from the
+  // node_revisions table.  We'll keep r.vid, r.title, and n.nid.
+  $fields = array_diff($fields, array('n.vid', 'n.title', 'r.nid'));
+  $fields = implode(', ', $fields);
+  // Rename timestamp field for clarity.
+  $fields = str_replace('r.timestamp', 'r.timestamp AS revision_timestamp', $fields);
+  // Change name of revision uid so it doesn't conflict with n.uid.
+  $fields = str_replace('r.uid', 'r.uid AS revision_uid', $fields);
+  // Retrieve the node.
+  // No db_rewrite_sql is applied so as to get complete indexing for search.
+  if ($revision) {
+    array_unshift($arguments, $revision);
+    $node = db_fetch_object(db_query('SELECT '. $fields .' FROM {node} n INNER JOIN {users} u ON u.uid = n.uid INNER JOIN {node_revisions} r ON r.nid = n.nid AND r.vid = %d WHERE '. $cond, $arguments));
+  }
+  else {
+    $node = db_fetch_object(db_query('SELECT '. $fields .' FROM {node} n INNER JOIN {users} u ON u.uid = n.uid INNER JOIN {node_revisions} r ON r.vid = n.vid WHERE '. $cond, $arguments));
+  }
+  if ($node && $node->nid) {
+    // Call the node specific callback (if any) and piggy-back the
+    // results to the node or overwrite some values.
+    if ($extra = node_invoke($node, 'load')) {
+      foreach ($extra as $key => $value) {
+        $node->$key = $value;
+      }
+    }
+    /*if ($extra = node_invoke_nodeapi($node, 'load')) {
+      foreach ($extra as $key => $value) {
+        $node->$key = $value;
+      }
+    }*/
+    if ($cachable) {
+      $nodes[$node->nid] = is_object($node) ? drupal_clone($node) : $node;
+    }
+  }
+  return $node;
+}
+
+/**
+ * Implementation of hook_menu_alter().
+ */
+/*function custom_hooks_menu_alter(&$items) {
+  //if (user_access('administor user role access') || user_access('content creator role access') || user_access('marketing team role access')) {
+    $items['admin/content/node']['access arguments'][0] = 'administor user role access';
+    $items['admin/content/node']['access arguments'][1] = 'marketing team role access';
+    $items['admin/content/node']['access arguments'][2] = 'content creator role access';
+  //}
+  //if () {
+    $items['admin/image_upload']['access arguments'][0] = 'administor user role access';
+    $items['admin/image_upload']['access arguments'][0] = 'marketing team role access';
+    $items['admin/image_upload']['access arguments'][0] = 'content creator role access';
+  //}
+}*/
+
+/**
+ * Function sends mail alert to admin role or marketing team role users while creating or updating content.
+ */
+function send_content_create_update_mail_alert($node) {
+  global $user;
+  $flag = 0;
+  if ($user->uid != 1 && user_access('marketing team role access') && $node->status && $node->field_approve_disapprove[0]['value']) {
+    $logged_in_role = 'marketing team';
+    $mail_to_roles = ADMINISTER_USER_ROLE_ID;
+	$flag = 1;
+  }
+  elseif ($user->uid != 1 && user_access('content creator role access')) {
+    $logged_in_role = 'content creator';
+    $mail_to_roles = ADMINISTER_USER_ROLE_ID . ',' . MARKETING_TEAM_ROLE_ID;
+	$flag = 1;
+  }
+  if ($flag) {
+    $sql = "SELECT u.uid, u.name, u.mail FROM {users} u INNER JOIN {users_roles} ur ON (u.uid = ur.uid AND u.status = 1 AND ur.rid IN ($mail_to_roles))";
+    $result = db_query($sql);
+    while ($row = db_fetch_object($result)) {
+      $users_details[$row->uid]['name'] = $row->name;
+      $users_details[$row->uid]['mail'] = $row->mail;
+    }
+    if (count($users_details)) {
+      $headers = 'From: ' . 'info@10EQS.com' . "\r\n".'Reply-To: ' . 'info@10EQS.com' . "\r\n" . 'Content-Type: text/html' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+	  if (arg(2) == 'edit') {
+        $subject = 'Content Updated';
+	  }
+	  elseif (arg(2) == 'delete') {
+        $subject = 'Content deleted';
+	  }
+	  else {
+        $subject = 'Content created';
+	  }
+      foreach ($users_details as $key => $details) {
+	    $message = "Hi " . $details['name'] . ",<br /><br />";
+	    if (arg(2) == 'edit') {
+	      $message .= "A content has been updated by $logged_in_role ($user->name). Click " . l('here', "node/$node->nid", array('absolute' => TRUE)) . " to review the updated content after login.<br /><br />";
+	    }
+		elseif (arg(2) == 'delete') {
+	      $message .= "The following content has been deleted by $logged_in_role ($user->name):-<br /><br />";
+	      $message .= $node->title . "<br /><br />";
+		}
+	    else {
+	      $message .= "A content has been created by $logged_in_role ($user->name). Click " . l('here', "node/$node->nid", array('absolute' => TRUE)) . " to review the new content after login.<br /><br />";
+	    }
+	    $message .= "Thanks,<br />";
+	    $message .= "info@10EQS.com";
+	    @mail($details['mail'], $subject, $message, $headers);
+      }
+    }
+  }
+}
+
+function webform_extra_validate_64($form, $form_state) {
+  $messages = drupal_get_messages(NULL, FALSE);
+  if (count($messages['error'])) {
+    $_SESSION['contact_us_error'] = $messages;
+    $_SESSION['form_values'] = $form_state['values']['submitted'];
+    drupal_goto($_SERVER[HTTP_REFERER].'?error=true');
+
+  }
+}
+
+function webform_extra_submit_64($form, $form_state) {
+  drupal_goto($_SERVER[HTTP_REFERER]);
+}
+
+function custom_hooks_back_to_referer(){
+  print $_SESSION['CURRENT_PAGE'];
+  drupal_goto($_SESSION['CURRENT_PAGE']); 
+}
+?>
